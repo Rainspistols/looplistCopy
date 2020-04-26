@@ -1,6 +1,5 @@
 # next.js build output
 .next
-next-env.d.ts
 
 # dotenv environment variables
 .env
