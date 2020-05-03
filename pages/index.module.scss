@@ -1,0 +1,93 @@
+
+// home-specific styles
+.whats-loops-list {
+  font-size: 1.25em;
+  color: #363636;
+
+  .subtitle {
+    color: #363636;
+    font-weight: bold;
+  }
+
+  h1 {
+    font-size: 1.20em;
+  }
+}
+
+.blue-section {
+  font-size: 1.50rem;
+  background-color: #5bd6ff;
+}
+
+.card-list {
+  min-height: 520px;
+  .container {
+    padding-top: 24px;
+  }
+}
+
+.who-we-are {
+  background-color: #ff981b;
+  color: #ffffff;
+  font-size: 1.25em;
+
+  .subtitle {
+    font-weight: bold;
+  }
+
+  h1 {
+    font-size: 1.50rem;
+  }
+
+  h1, h2 {
+    color: #ffffff;
+  }
+}
+
+.email-signup {
+  background-color: #ef3c8f;
+  // background-color: #ff5a39;
+  .subtitle {
+    color: #ffffff;
+  }
+}
+
+.concept-link {
+  font-weight: 400;
+  line-height: 1.25;
+  margin-top: 8px;
+
+  &:hover {
+    h3 {
+      text-decoration: underline;
+    }
+  }
+
+  h3 {
+    color: #363636;
+    font-size: 1.25rem;
+    margin-top: 12px;
+  }
+
+  p {
+    color: #757763;
+    font-size: .95rem;
+    margin-top: 4px;
+  }
+}
+
+.mce-pos {
+  position: absolute;
+  left: -5000px;
+}
+
+.mce-response {
+  display:none;
+}
+
+#mc_embed_signup {
+  background:#fff;
+  clear:left;
+  font:14px
+  Helvetica,Arial,sans-serif;
+}

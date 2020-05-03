@@ -1,3 +1,5 @@
+import styles from './index.module.scss'
+
 import Layout, { siteTitle } from '../components/layout'
 
 export default function Home() {
