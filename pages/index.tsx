@@ -1,6 +1,4 @@
-import styles from './index.module.scss'
-
-import Layout, { siteTitle } from '../components/layout'
+import Layout from '../components/layout'
 
 export default function Home() {
   return (
@@ -141,7 +139,6 @@ export default function Home() {
               name="mc-embedded-subscribe-form"
               className="validate"
               target="_blank"
-              novalidate
             >
               <h2 className="subtitle">Get Loop's List Updates!</h2>
               <div className="field has-addons">
@@ -165,7 +162,7 @@ export default function Home() {
                 </p>
               </div>
               <div className="mce-pos" aria-hidden="true">
-                <input type="text" name="b_95920c1da2b492843fa60271e_6a0e3b1b73" tabindex="-1" value="" />
+                <input type="text" name="b_95920c1da2b492843fa60271e_6a0e3b1b73" value="" />
               </div>
               <div id="mce-responses" className="clear">
                 <div className="mce-response response" id="mce-error-response"></div>
