@@ -13,7 +13,6 @@
     "declaration": true,
     "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true,
-    "emitDeclarationOnly": true,
     "esModuleInterop": true,
     "incremental": true,
     "module": "esnext",
