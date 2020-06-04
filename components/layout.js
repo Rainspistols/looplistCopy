@@ -1,8 +1,8 @@
-import Head from 'next/head'
-import Link from 'next/link'
-import styles from './layout.module.scss'
+import Head from 'next/head';
+import Link from 'next/link';
+import styles from './layout.module.scss';
 
-export const siteTitle = "Loop's List"
+export const siteTitle = "Loop's List";
 
 export default function Layout({ children }) {
   return (
@@ -24,38 +24,6 @@ export default function Layout({ children }) {
         <script src="https://kit.fontawesome.com/90203d613f.js"></script>
       </Head>
 
-      <nav className="navbar is-black" role="navigation" aria-label="main navigation">
-        <div className="container">
-          <div className="navbar-brand">
-            <a className="navbar-item" href="/">
-              <h3>{siteTitle}</h3>
-            </a>
-
-            <a
-              role          = "button"
-              className     = "navbar-burger burger"
-              aria-label    = "menu"
-              aria-expanded = "false"
-              data-target   = "navbarBasicExample"
-            >
-              <span aria-hidden="true"></span>
-              <span aria-hidden="true"></span>
-              <span aria-hidden="true"></span>
-            </a>
-          </div>
-
-          <div className="navbar-menu">
-            <div className="navbar-end">
-              <div className="navbar-item">
-                <Link className="navbar-item" href="/abcs-of-code">
-                  ABCs of Code
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </nav>
-
       <main>{children}</main>
 
       <footer className="footer has-background-white">
@@ -75,5 +43,5 @@ export default function Layout({ children }) {
         </div>
       </footer>
     </div>
-  )
+  );
 }

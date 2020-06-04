@@ -140,7 +140,7 @@ export default function Home() {
               className="validate"
               target="_blank"
             >
-              <h2 className="subtitle">Get Loop's List Updates!</h2>
+              <h2 className="subtitle">Get Loop`s List Updates!</h2>
               <div className="field has-addons">
                 <p className="control is-expanded has-icons-left">
                   <input

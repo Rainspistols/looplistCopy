@@ -1,0 +1,55 @@
+import { ThemeProvider } from 'emotion-theming';
+
+const theme = {
+  colors: {
+    // Set your brand colors
+    green: '#0fce96',
+    pink: '#fa7c91',
+    brown: '#757763',
+    beigeLight: '#d0d1cd',
+    beigeLighter: '#eff0eb',
+    blue: '#00c2f7',
+    white: 'white',
+    black: '#0c0c0d',
+  },
+
+  flexCenter: {
+    display: 'flex',
+    'align-items': 'center',
+    'justify-content': 'center',
+  },
+  flexBetween: {
+    display: 'flex',
+    'align-items': 'center',
+    'justify-content': 'space-between',
+  },
+
+  globalPadding: {
+    padding: '0 20px',
+  },
+
+  pixelToVieWidth: (px) => {
+    return (px / 375) * 100 + 'vw';
+  },
+};
+
+// Update Bulma's global variables
+// $family-sans-serif : menlo, Consolas, arial, sans-serif;
+// $grey-dark         : $brown;
+// $grey-light        : $beige-light;
+// $primary           : $blue;
+// $link              : $blue;
+// $widescreen-enabled: false;
+// $fullhd-enabled    : false;
+
+// // Update some of Bulma's component variables
+// $body-background-color: $beige-lighter;
+// $control-border-width : 2px;
+// $input-border-color   : transparent;
+// $input-shadow         : none;
+
+// $navbar-breakpoint: 400px;
+
+const Theme = ({ children }) => <ThemeProvider theme={theme}>{children}</ThemeProvider>;
+
+export default Theme;

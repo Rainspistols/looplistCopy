@@ -1,4 +1,3 @@
-
 export default function Alphabet() {
   return (
     <div className="Alphabet">
