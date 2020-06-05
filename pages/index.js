@@ -2,6 +2,7 @@ import Layout from '../components/layout';
 import Main from '../layouts/Main/Main';
 import Hero from '../components/Hero/Hero';
 import MainProducts from '../components/MainProducts/MainProducts';
+import Products from '../components/Products/Products';
 
 const Home = () => {
   return (
@@ -9,68 +10,9 @@ const Home = () => {
       <div className="Home">
         <Hero />
         <MainProducts />
+        <Products />
 
-        {/* <section className="section has-background-white-ter card-list">
-          <div className="container">
-            <h2 className="subtitle">
-              Follow along on <a href="https://www.instagram.com/loopslist/">Instagram</a> for coding basics and
-              stories.
-            </h2>
-            <div className="columns">
-              <div className="column">
-                <figure className="image is-3by3">
-                  <img src="https://loopslist.s3.amazonaws.com/web/images/65_LOOP_INSTA_DEF.jpg" alt="" />
-                </figure>
-              </div>
-              <div className="column">
-                <figure className="image is-3by3">
-                  <img src="https://loopslist.s3.amazonaws.com/web/images/55_LOOP_INSTA_BYTE.jpg" alt="" />
-                </figure>
-              </div>
-              <div className="column">
-                <figure className="image is-3by3">
-                  <img src="https://loopslist.s3.amazonaws.com/web/images/28_LOOP_INSTA_ALGO_BEDTIME.jpg" alt="" />
-                </figure>
-              </div>
-            </div>
-            <div className="columns">
-              <div className="column">
-                <figure className="image is-3by3">
-                  <img src="https://loopslist.s3.amazonaws.com/web/images/44_LOOP_INSTA_ARRAYS_HUGS_01.jpg" alt="" />
-                </figure>
-              </div>
-              <div className="column">
-                <figure className="image is-3by3">
-                  <img src="https://loopslist.s3.amazonaws.com/web/images/52_LOOP_INSTA_BIT_01.jpg" alt="" />
-                </figure>
-              </div>
-              <div className="column">
-                <figure className="image is-3by3">
-                  <img src="https://loopslist.s3.amazonaws.com/web/images/15_LOOP_INSTA_STRING.jpg" alt="" />
-                </figure>
-              </div>
-            </div>
-            <div className="columns">
-              <div className="column">
-                <figure className="image is-3by3">
-                  <img src="https://loopslist.s3.amazonaws.com/web/images/10_LOOP_INSTA_BUGS_01.jpg" alt="" />
-                </figure>
-              </div>
-              <div className="column">
-                <figure className="image is-3by3">
-                  <img src="https://loopslist.s3.amazonaws.com/web/images/25_LOOP_INSTA_VARIABLE_CAT_01.jpg" alt="" />
-                </figure>
-              </div>
-              <div className="column">
-                <figure className="image is-3by3">
-                  <img src="https://loopslist.s3.amazonaws.com/web/images/42_LOOP_INSTA_ARRAYS.jpg" alt="" />
-                </figure>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="section who-we-are">
+        {/* <section className="section who-we-are">
           <div className="container">
             <h1 className="title">Created By</h1>
             <div className="columns">

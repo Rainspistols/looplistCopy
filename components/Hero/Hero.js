@@ -12,11 +12,11 @@ const Hero = () => {
 };
 
 const HeroStyled = styled.section`
-  background: whitesmoke;
+  background: ${(props) => props.theme.colors.whiteSmoke};
   padding: 40px 0;
 
   h2 {
-    color: ${props=>props.theme.colors.black};
+    color: ${(props) => props.theme.colors.black};
     font-size: 20px;
     line-height: 28px;
     text-align: center;

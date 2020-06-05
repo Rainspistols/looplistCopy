@@ -11,6 +11,7 @@ const theme = {
     blue: '#00c2f7',
     white: 'white',
     black: '#0c0c0d',
+    whiteSmoke: '#f5f5f5',
   },
 
   flexCenter: {
@@ -31,6 +32,8 @@ const theme = {
   pixelToVieWidth: (px) => {
     return (px / 375) * 100 + 'vw';
   },
+
+  mediaTablet: '@media(min-width: 768px)',
 };
 
 // Update Bulma's global variables

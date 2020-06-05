@@ -48,7 +48,7 @@ const MainProductsStyled = styled.section`
     background: ${(props) => props.theme.colors.blue};
   }
 
-  @media (min-width: 768px) {
+  ${(props) => props.theme.mediaTablet} {
     .products {
       ul {
         ${(props) => props.theme.flexBetween};
