@@ -12,6 +12,7 @@ const GlobalStyles = () => (
         background: white;
         min-height: 100%;
         font-family: 'Poppins', sans-serif;
+        min-width: 320px;
       }
 
       img {

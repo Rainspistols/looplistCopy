@@ -1,47 +1,16 @@
 import Layout from '../components/layout';
 import Main from '../layouts/Main/Main';
+import Hero from '../components/Hero/Hero';
+import MainProducts from '../components/MainProducts/MainProducts';
 
 const Home = () => {
   return (
     <Main headTitle="loop's list">
-      {/* <div className="Home">
-        <section className="hero is-light">
-          <div className="hero-body">
-            <div className="container">
-              <p className="subtitle">Loop’s List introduces coding and technology concepts!</p>
-            </div>
-          </div>
-        </section>
+      <div className="Home">
+        <Hero />
+        <MainProducts />
 
-        <section className="section has-background-white">
-          <div className="container">
-            <div className="columns">
-              <div className="column">
-                <figure className="image is-3by3">
-                  <img src="https://loopslist.s3.amazonaws.com/web/images/08_LOOP_INSTA_WHILE_NAPTIME_CAT.jpg" alt="" />
-                </figure>
-              </div>
-              <div className="column">
-                <figure className="image is-3by3">
-                  <img src="https://loopslist.s3.amazonaws.com/web/images/47_LOOP_INSTA_FLOAT_01.jpg" alt="" />
-                </figure>
-              </div>
-              <div className="column">
-                <figure className="image is-3by3">
-                  <img src="https://loopslist.s3.amazonaws.com/web/images/35_LOOP_INSTA_PIRATE_ARG_01.jpg" alt="" />
-                </figure>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="hero blue-section">
-          <div className="hero-body">
-            <p className="title"></p>
-          </div>
-        </section>
-
-        <section className="section has-background-white-ter card-list">
+        {/* <section className="section has-background-white-ter card-list">
           <div className="container">
             <h2 className="subtitle">
               Follow along on <a href="https://www.instagram.com/loopslist/">Instagram</a> for coding basics and
@@ -172,8 +141,8 @@ const Home = () => {
             </form>
           </div>
           <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
-        </section>
-      </div> */}
+        </section> */}
+      </div>
     </Main>
   );
 };
