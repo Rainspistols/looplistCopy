@@ -1,16 +1,19 @@
-import Head from 'next/head'
+import Head from 'next/head';
+import Header from '../../components/Header/Header';
+import Footer from '../../components/Footer/Footer';
 
 const Main = ({ headTitle, children }) => {
   return (
-    <Head>
-      <title>{headTitle}</title>
-
+    <>
+      <Head>
+        <title>{headTitle}</title>
+      </Head>
+      
+      <Header />
       <main>{children}</main>
+      <Footer />
+    </>
+  );
+};
 
-
-      {/* <footer></footer> */}
-    </Head>
-  )
-}
-
-export default Main
+export default Main;

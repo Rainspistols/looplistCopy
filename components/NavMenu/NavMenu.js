@@ -47,6 +47,7 @@ const NavMenuStyled = styled.section`
     .absCodeLink {
       display: flex;
       white-space: nowrap;
+      color: ${(props) => props.theme.colors.blue};
     }
   }
 `;

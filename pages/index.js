@@ -1,9 +1,10 @@
-import Layout from '../components/layout'
+import Layout from '../components/layout';
+import Main from '../layouts/Main/Main';
 
-export default function Home() {
+const Home = () => {
   return (
-    <Layout>
-      <div className="Home">
+    <Main headTitle="loop's list">
+      {/* <div className="Home">
         <section className="hero is-light">
           <div className="hero-body">
             <div className="container">
@@ -161,8 +162,8 @@ export default function Home() {
                   </button>
                 </p>
               </div>
-              <div className="mce-pos" aria-hidden="true">
-                <input type="text" name="b_95920c1da2b492843fa60271e_6a0e3b1b73" value="" />
+              <div className="mce-pos" ariahidden="true">
+                <input type="text" name="b_95920c1da2b492843fa60271e_6a0e3b1b73" />
               </div>
               <div id="mce-responses" className="clear">
                 <div className="mce-response response" id="mce-error-response"></div>
@@ -172,7 +173,9 @@ export default function Home() {
           </div>
           <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
         </section>
-      </div>
-    </Layout>
-  )
-}
+      </div> */}
+    </Main>
+  );
+};
+
+export default Home;

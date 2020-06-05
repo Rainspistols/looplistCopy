@@ -36,6 +36,7 @@ const HeaderStyled = styled.header`
       color: ${(props) => props.theme.colors.white};
       font-weight: bold;
       font-size: 21px;
+      
     }
   }
 

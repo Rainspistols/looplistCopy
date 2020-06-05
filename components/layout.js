@@ -1,8 +1,5 @@
 import Head from 'next/head';
-import Link from 'next/link';
 import styles from './layout.module.scss';
-
-export const siteTitle = "Loop's List";
 
 export default function Layout({ children }) {
   return (
@@ -16,7 +13,7 @@ export default function Layout({ children }) {
         <meta property="og:site_name" content="Loop's List" />
         <meta property="og:url" content="http://loopslist.com" />
         <meta property="og:image" content="http://loopslist.com/images/BUG_WAVE.png" />
-        <meta name="og:title" content={siteTitle} />
+        <meta name="og:title" content="Loop's List" />
 
         <meta name="description" content="Coding and Technology Concepts" />
         <meta name="author" content="Loop's List" />
@@ -39,7 +36,7 @@ export default function Layout({ children }) {
           <a href="mailto:hello@loopslist.com">Contact Us</a>
           <br />
           <br />
-          <p>™ © 2020 {siteTitle}. All rights reserved.</p>
+          <p>™ © 2020 Loop's List. All rights reserved.</p>
         </div>
       </footer>
     </div>
