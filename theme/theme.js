@@ -5,13 +5,16 @@ const theme = {
     // Set your brand colors
     green: '#0fce96',
     pink: '#fa7c91',
+    pink2: '#ef3c8f',
     brown: '#757763',
     beigeLight: '#d0d1cd',
     beigeLighter: '#eff0eb',
     blue: '#00c2f7',
+    blue2: '#2793da',
     white: 'white',
     black: '#0c0c0d',
     whiteSmoke: '#f5f5f5',
+    orange: '#ff981b',
   },
 
   flexCenter: {
@@ -19,6 +22,7 @@ const theme = {
     'align-items': 'center',
     'justify-content': 'center',
   },
+
   flexBetween: {
     display: 'flex',
     'align-items': 'center',

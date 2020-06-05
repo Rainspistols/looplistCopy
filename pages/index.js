@@ -3,88 +3,20 @@ import Main from '../layouts/Main/Main';
 import Hero from '../components/Hero/Hero';
 import MainProducts from '../components/MainProducts/MainProducts';
 import Products from '../components/Products/Products';
+import CreatedBy from '../components/CreatedBy/CreatedBy';
+import ColorfulSeparater from '../layouts/ColorfulSeparater/ColorfulSeparater';
+import Newsletter from '../components/Newsletter/Newsletter';
 
 const Home = () => {
   return (
     <Main headTitle="loop's list">
-      <div className="Home">
-        <Hero />
-        <MainProducts />
-        <Products />
-
-        {/* <section className="section who-we-are">
-          <div className="container">
-            <h1 className="title">Created By</h1>
-            <div className="columns">
-              <div className="column">
-                <a href="http://astridriemer.com/">
-                  <img width="125" src="/images/CAT_CIRCLE.png" alt="" />
-                </a>
-                <a href="http://astridriemer.com/">
-                  <h2 className="subtitle">Astrid Riemer</h2>
-                </a>
-                <h3>designer</h3>
-              </div>
-              <div className="column">
-                <a href="http://roomnoise.com/">
-                  <img width="125" src="/images/BUG_CIRCLE.png" alt="" />
-                </a>
-                <a href="http://roomnoise.com/">
-                  <h2 className="subtitle">Marcus Smith</h2>
-                </a>
-                <h3>software developer</h3>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="section has-background-white-ter">
-          <div className="container"></div>
-        </section>
-
-        <section className="section email-signup">
-          <div className="container intro-text">
-            <form
-              action="https://gmail.us3.list-manage.com/subscribe/post?u=95920c1da2b492843fa60271e&amp;id=6a0e3b1b73"
-              method="post"
-              id="mc-embedded-subscribe-form"
-              name="mc-embedded-subscribe-form"
-              className="validate"
-              target="_blank"
-            >
-              <h2 className="subtitle">Get Loop`s List Updates!</h2>
-              <div className="field has-addons">
-                <p className="control is-expanded has-icons-left">
-                  <input
-                    type="email"
-                    name="EMAIL"
-                    className="input email"
-                    id="mce-EMAIL"
-                    placeholder="Email address"
-                    required
-                  />
-                  <span className="icon is-small is-left">
-                    <i className="fas fa-envelope"></i>
-                  </span>
-                </p>
-                <p className="control">
-                  <button className="button is-info" type="submit">
-                    Sign me up!
-                  </button>
-                </p>
-              </div>
-              <div className="mce-pos" ariahidden="true">
-                <input type="text" name="b_95920c1da2b492843fa60271e_6a0e3b1b73" />
-              </div>
-              <div id="mce-responses" className="clear">
-                <div className="mce-response response" id="mce-error-response"></div>
-                <div className="mce-response response" id="mce-success-response"></div>
-              </div>
-            </form>
-          </div>
-          <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
-        </section> */}
-      </div>
+      <Hero />
+      <MainProducts />
+      <ColorfulSeparater color="#00c2f7" />
+      <Products />
+      <CreatedBy />
+      <ColorfulSeparater color="#f5f5f5" />
+      <Newsletter />
     </Main>
   );
 };

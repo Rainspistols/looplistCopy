@@ -20,6 +20,7 @@ const HeroStyled = styled.section`
     font-size: 20px;
     line-height: 28px;
     text-align: center;
+    font-weight: 400;
   }
 `;
 

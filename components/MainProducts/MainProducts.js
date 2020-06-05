@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import { img1, img2, img3 } from './images';
 import Container from '../../layouts/Container/Container';
 
+
 const MainProducts = () => {
   const data = [
     { img: img2, alt: 'while nap_time' },
@@ -23,7 +24,7 @@ const MainProducts = () => {
         </section>
       </Container>
 
-      <div className="blueSeparater" />
+ 
     </MainProductsStyled>
   );
 };
@@ -41,11 +42,6 @@ const MainProductsStyled = styled.section`
         margin: 0 auto;
       }
     }
-  }
-
-  .blueSeparater {
-    height: 100px;
-    background: ${(props) => props.theme.colors.blue};
   }
 
   ${(props) => props.theme.mediaTablet} {

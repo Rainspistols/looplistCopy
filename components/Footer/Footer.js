@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import { GrTwitter } from 'react-icons/gr';
 import { AiOutlineInstagram } from 'react-icons/ai';
+import { IoMdMail } from 'react-icons/io';
 
 import Container from '../../layouts/Container/Container';
 
@@ -24,6 +25,9 @@ const Footer = () => {
         </div>
 
         <a className="email" href="mailto:hello@loopslist.com">
+          <span>
+            <IoMdMail />
+          </span>
           Send us a email
         </a>
         <small className="copyright">™ © 2020 Loop's List. All rights reserved.</small>
@@ -44,9 +48,24 @@ const FooterStyled = styled.footer`
   }
 
   .email {
-    text-align: center;
     color: ${(props) => props.theme.colors.blue};
     margin-bottom: 10px;
+    ${(props) => props.theme.flexCenter};
+
+    span {
+      ${(props) => props.theme.flexCenter};
+      margin-right: 10px;
+    }
+
+    svg {
+      width: 30px;
+      height: auto;
+    }
+  }
+
+  .copyright {
+    color: ${(props) => props.theme.colors.brown};
+    font-weight: 300;
   }
 
   .socials {
@@ -58,6 +77,10 @@ const FooterStyled = styled.footer`
         width: 48px;
         height: auto;
         color: ${(props) => props.theme.colors.blue};
+      }
+
+      :not(:last-child) {
+        margin-right: 20px;
       }
     }
   }

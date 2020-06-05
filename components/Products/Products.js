@@ -45,6 +45,8 @@ const ProdutcsStyled = styled.section`
     font-size: 20px;
     line-height: 28px;
     margin-bottom: 24px;
+    font-weight: 300;
+    color: ${(props) => props.theme.colors.brown};
 
     a {
       color: ${(props) => props.theme.colors.blue};
