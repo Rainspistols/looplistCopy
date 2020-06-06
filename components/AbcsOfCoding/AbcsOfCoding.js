@@ -97,7 +97,7 @@ const AbcsOfCodingStyled = styled.section`
           margin-bottom: 30px;
         }
 
-        :not(:nth-child(3n)) {
+        :not(:nth-of-type(3n)) {
           margin-right: 2%;
         }
       }

@@ -73,7 +73,7 @@ const ProdutcsStyled = styled.section`
         width: 32%;
         margin-bottom: 50px;
 
-        :not(:nth-child(3n)) {
+        :not(:nth-of-type(3n)) {
           margin-right: 2%;
         }
         :not(:last-child) {

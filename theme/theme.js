@@ -19,14 +19,14 @@ const theme = {
 
   flexCenter: {
     display: 'flex',
-    'align-items': 'center',
-    'justify-content': 'center',
+    'alignItems': 'center',
+    'justifyContent': 'center',
   },
 
   flexBetween: {
     display: 'flex',
-    'align-items': 'center',
-    'justify-content': 'space-between',
+    'alignItems': 'center',
+    'justifyContent': 'space-between',
   },
 
   globalPadding: {
