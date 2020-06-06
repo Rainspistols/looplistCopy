@@ -1,4 +1,3 @@
-import Layout from '../components/layout';
 import Main from '../layouts/Main/Main';
 import Hero from '../components/Hero/Hero';
 import MainProducts from '../components/MainProducts/MainProducts';

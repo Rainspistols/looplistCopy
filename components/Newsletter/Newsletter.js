@@ -99,7 +99,7 @@ const NewsletterStyled = styled.section`
         padding: 5px 20px;
 
         ::placeholder {
-          color: ${(props) => props.theme.colors.beigeLight};
+          color: ${(props) => props.theme.colors.white};
         }
       }
     }
@@ -107,9 +107,9 @@ const NewsletterStyled = styled.section`
 
   #mce-success-response {
     padding-top: 20px;
-    color: ${(props) => props.theme.colors.blue};
+    color: ${(props) => props.theme.colors.brown};
     font-weight: 300;
-    font-size: 20px;
+    font-size: 16px;
     line-height: 24px;
   }
 `;

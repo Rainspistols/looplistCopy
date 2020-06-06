@@ -24,6 +24,6 @@
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx", "pages/index.js", "pages/abcs-of-code.js", "pages/abcs-of-coding/index.j"
+    "**/*.tsx", "pages/index.js", "pages/abcs-of-code.js", "pages/abcs-of-code/index.j"
   ]
 }
