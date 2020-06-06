@@ -22,6 +22,10 @@ class MyDocument extends Document {
 
           <meta name="description" content="Coding and Technology Concepts" />
           <meta name="author" content="Loop's List" />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700&display=swap"
+            rel="stylesheet"
+          />
         </Head>
         <body>
           <Main />

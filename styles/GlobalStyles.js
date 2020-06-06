@@ -13,6 +13,7 @@ const GlobalStyles = () => (
         min-height: 100%;
         font-family: 'Poppins', sans-serif;
         min-width: 320px;
+        font-family: 'Inconsolata', monospace;
       }
 
       img {

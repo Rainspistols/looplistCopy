@@ -99,7 +99,7 @@ const NewsletterStyled = styled.section`
         padding: 5px 20px;
 
         ::placeholder {
-          color: ${(props) => props.theme.colors.white};
+          color: ${(props) => props.theme.colors.blue};
         }
       }
     }
