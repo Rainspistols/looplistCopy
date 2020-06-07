@@ -9,11 +9,6 @@ import Newsletter from '../components/Newsletter/Newsletter';
 const Home = () => {
   return (
     <Main headTitle="loop's list">
-      <ul>
-        <li>{process.env.NEXT_SERVER_TEST_1}</li>
-        <li>{process.env.NEXT_PUBLIC_TEST_1}</li>
-        <li>{process.env.NEXT_STATIC_TEST_1}</li>
-      </ul>
       <Hero />
       <MainProducts />
       <ColorfulSeparater color="#00c2f7" />
@@ -24,19 +19,5 @@ const Home = () => {
     </Main>
   );
 };
-
-export const getStaticProps = async (context) => {
-  // const res = await fetch(`https://cdn.contentful.com/ySgbMa8_1DHQJ7iHbeXi6Eu2IdwzpUOW9v4G8yN-5iA`);
-  // const ourWorksData = await res.json();
-
-  return {
-    props: {
-      // ourWorksData,
-    },
-  };
-};
-
-// Space ID: f1b2ccqacux6
-// Content Delivery API: ySgbMa8_1DHQJ7iHbeXi6Eu2IdwzpUOW9v4G8yN-5iA
 
 export default Home;

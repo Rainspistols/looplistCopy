@@ -14,33 +14,38 @@ import {
   kilobyteImg,
   loopImg,
 } from './images/';
+import Link from 'next/link';
 
-const AbcsOfCoding = () => {
-  const data = [
-    { src: arrayImg, alt: 'array' },
-    { src: bitImg, alt: 'bit' },
-    { src: cookieImg, alt: 'cookie' },
-    { src: debugImg, alt: 'debug' },
-    { src: enumImg, alt: 'enum' },
-    { src: functionImg, alt: 'function' },
-    { src: gigabyteImg, alt: 'gigabyte' },
-    { src: htmlImg, alt: 'html' },
-    { src: integerImg, alt: 'integer' },
-    { src: jsonImg, alt: 'json' },
-    { src: kilobyteImg, alt: 'kilobyte' },
-    { src: loopImg, alt: 'loop' },
-  ];
+const AbcsOfCoding = ({ data }) => {
+  //Mock Data
+  // const data = [
+  //   { src: arrayImg, alt: 'array' },
+  //   { src: bitImg, alt: 'bit' },
+  //   { src: cookieImg, alt: 'cookie' },
+  //   { src: debugImg, alt: 'debug' },
+  //   { src: enumImg, alt: 'enum' },
+  //   { src: functionImg, alt: 'function' },
+  //   { src: gigabyteImg, alt: 'gigabyte' },
+  //   { src: htmlImg, alt: 'html' },
+  //   { src: integerImg, alt: 'integer' },
+  //   { src: jsonImg, alt: 'json' },
+  //   { src: kilobyteImg, alt: 'kilobyte' },
+  //   { src: loopImg, alt: 'loop' },
+  // ];
+
   return (
     <AbcsOfCodingStyled>
       <Container>
         <h2>ABCs of Coding</h2>
         <p className="slogan">A coding and technology concept for each letter of the alphabet!</p>
         <ul>
-          {data.map(({ src, alt }, index) => (
+          {data.map(({ img, alt, slug }, index) => (
             <li key={index}>
-              <a href="#">
-                <img src={src} alt={alt} />
-              </a>
+              <Link href="/abcs-of-code/[slug]" as={`/abcs-of-code/${slug}`}>
+                <a>
+                  <img src={img} alt={alt} />
+                </a>
+              </Link>
             </li>
           ))}
         </ul>
