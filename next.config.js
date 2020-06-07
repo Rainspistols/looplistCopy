@@ -2,10 +2,10 @@ require('dotenv').config();
 
 module.exports = {
   env: {
-    API_URL: process.env.CONTENTFUL_SPACE_ID,
+    API_URL: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
   },
   publicRuntimeConfig: {
-    API_URL: process.env.CONTENTFUL_ACCESS_TOKEN,
+    API_URL: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
   },
 };
 
