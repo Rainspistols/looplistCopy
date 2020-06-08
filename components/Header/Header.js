@@ -32,11 +32,16 @@ const HeaderStyled = styled.header`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
+
+    .logo {
+      justify-content: center;
+    };
+
     h3 {
       color: ${(props) => props.theme.colors.white};
       font-weight: bold;
       font-size: 21px;
-      
     }
   }
 
