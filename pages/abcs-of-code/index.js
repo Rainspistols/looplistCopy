@@ -1,32 +1,22 @@
 import Main from '../../layouts/Main/Main';
 import AbcsOfCoding from '../../components/AbcsOfCoding/AbcsOfCoding';
-import { createClient } from 'contentful';
+import ContentfulService from '../../services/contentful';
 
-const Alphabet = ({ abcsData }) => {
+const Alphabet = ({ allContentPageItems }) => {
   return (
     <Main headTitle="abcs-of-code">
-      <AbcsOfCoding data={abcsData} />
+      <AbcsOfCoding data={allContentPageItems} />
     </Main>
   );
 };
 
-const client = createClient({
-  space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
-  accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
-});
-
 export const getStaticProps = async () => {
-  const entries = await client.getEntries({
-    content_type: 'contentPage',
-  });
+  const contentfulService = new ContentfulService();
+  const allContentPageItems = await contentfulService.getAllContentPage();
 
   return {
     props: {
-      abcsData: entries.items.map((item) => ({
-        alt: item.fields.description,
-        slug: item.fields.slug,
-        img: item.fields.primaryImage.fields.file.url,
-      })),
+      allContentPageItems,
     },
   };
 };

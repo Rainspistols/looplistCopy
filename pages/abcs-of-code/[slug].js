@@ -3,16 +3,14 @@ import { createClient } from 'contentful';
 import { useState, useEffect } from 'react';
 import styled from '@emotion/styled';
 import Container from '../../layouts/Container/Container';
+import ContentfulService from '../../services/contentful';
 
-const AbcsItem = ({
-  //  rowData,
-  modifiedData,
-}) => {
+const AbcsItem = ({ spesificContentBySlug }) => {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    setData(modifiedData);
-  }, [modifiedData]);
+    setData(spesificContentBySlug);
+  }, [spesificContentBySlug]);
 
   return (
     <Main headTitle="item">
@@ -38,27 +36,25 @@ const client = createClient({
 });
 
 export const getStaticPaths = async () => {
+  const itemsList = await client.getEntries({
+    content_type: 'contentPage',
+  });
+
+  const paths = itemsList.items.map((item) => `/abcs-of-code/${item.fields.slug}`);
+
   return {
-    paths: [{ params: { slug: '' } }],
+    paths,
     fallback: true,
   };
 };
 
 export const getStaticProps = async (context) => {
-  const neededDataItem = await client.getEntries({
-    content_type: 'contentPage',
-    'fields.slug[in]': context.params.slug,
-  });
+  const contenrfulService = new ContentfulService();
+  const spesificContentBySlug = await contenrfulService.getSpecificContentPageItemBySlug(context.params.slug);
 
   return {
     props: {
-      // rowData: neededDataItem,
-      modifiedData: neededDataItem.items.map((item) => ({
-        alt: item.fields.description,
-        title: item.fields.title,
-        img: item.fields.primaryImage.fields.file.url,
-        p: item.fields.body.content[0].content[0].value,
-      })),
+      spesificContentBySlug,
     },
   };
 };
