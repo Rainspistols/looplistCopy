@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import styled from '@emotion/styled';
 import Container from '../../layouts/Container/Container';
 import ContentfulService from '../../services/contentful';
+import { useRouter } from 'next/router';
 
 const AbcsItem = ({ spesificContentBySlug }) => {
   const [data, setData] = useState(null);
@@ -12,10 +13,16 @@ const AbcsItem = ({ spesificContentBySlug }) => {
     setData(spesificContentBySlug);
   }, [spesificContentBySlug]);
 
+  const router = useRouter();
+  if (router.isFallback) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <Main headTitle="item">
       <AbcsItemStyled>
         <Container>
+          {router.isFallback ? <div>Loading...</div> : null}
           {data && (
             <>
               <img src={data[0].img} alt={data[0].alt} />
@@ -40,7 +47,7 @@ export const getStaticPaths = async () => {
     content_type: 'contentPage',
   });
 
-  const paths = itemsList.items.map((item) => `/abcs-of-code/${item.fields.slug}`);
+  const paths = itemsList.items.map((item) => ({ params: { slug: `/abcs-of-code/${item.fields.slug}` } }));
 
   return {
     paths,
