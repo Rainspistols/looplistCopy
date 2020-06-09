@@ -6,37 +6,36 @@ import NavMenu from '../NavMenu/NavMenu';
 const Header = () => {
   return (
     <HeaderStyled>
+      <div className="logo">
+        <Container>
+          <Link href="/">
+            <a>
+              <h3>Loop's List</h3>
+            </a>
+          </Link>
+        </Container>
+      </div>
       <Container>
-        <nav role="navigation" aria-label="main navigation">
-          <div className="logo">
-            <Link href="/">
-              <a>
-                <h3>Loop's List</h3>
-              </a>
-            </Link>
-          </div>
-
-          <NavMenu />
-        </nav>
+        <NavMenu />
       </Container>
     </HeaderStyled>
   );
 };
 
 const HeaderStyled = styled.header`
-  background: ${(props) => props.theme.colors.black};
   color: ${(props) => props.theme.colors.white};
-  padding: 20px 0;
+
+  .logo {
+    ${(props) => props.theme.flexCenter}
+    background: ${(props) => props.theme.colors.black};
+    padding: 30px 0;
+  }
 
   nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-
-    .logo {
-      justify-content: center;
-    };
 
     h3 {
       color: ${(props) => props.theme.colors.white};
@@ -45,12 +44,6 @@ const HeaderStyled = styled.header`
     }
   }
 
-  .logo {
-    width: 100%;
-    ${(props) => props.theme.flexBetween}
-    padding: 8px 0;
-    display: inline-flex;
-  }
 `;
 
 export default Header;

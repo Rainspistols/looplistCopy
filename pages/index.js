@@ -9,6 +9,7 @@ import Newsletter from '../components/Newsletter/Newsletter';
 const Home = () => {
   return (
     <Main headTitle="loop's list">
+
       <Hero />
       <MainProducts />
       <ColorfulSeparater color="#00c2f7" />

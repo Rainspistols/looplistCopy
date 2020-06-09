@@ -22,10 +22,12 @@ const NavMenu = () => {
 };
 
 const NavMenuStyled = styled.section`
+padding: 20px 0;
   .menuIcon {
     height: 52px;
     min-width: 52px;
     ${(props) => props.theme.flexCenter}
+    
 
     svg {
       width: 24px;
