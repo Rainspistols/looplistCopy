@@ -15,8 +15,11 @@ export default class ContentfulService {
     const contentPageItems = await this.client.getEntries({
       content_type: CONTENT_TYPE_CONTENTPAGE,
     });
-    return this._transformContentPageItems(contentPageItems);
+
+    const contentPageTransformed = this._transformContentPageItems(contentPageItems);
+    return await contentPageTransformed.sort((a, b) => ('' + a.slug).localeCompare(b.slug));
   };
+
   _transformContentPageItems = (contentPageItems) => {
     return contentPageItems.items.map((item) => ({
       alt: item.fields.description,
