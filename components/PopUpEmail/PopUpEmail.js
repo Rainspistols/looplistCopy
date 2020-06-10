@@ -5,7 +5,6 @@ import { useState } from 'react';
 import emailjs from 'emailjs-com';
 
 const PopUpEmail = ({ onPopupClose }) => {
-  const [name, setName] = useState('name');
   const [email, setEmail] = useState(null);
   const [emailStatus, setEmailStatus] = useState(null);
 
@@ -30,8 +29,9 @@ const PopUpEmail = ({ onPopupClose }) => {
 
     sendFeedback(templateId, {
       link_download: 'www.example.com',
-      from_name: name,
       to_email: email,
+      email: email,
+      customer_name: email,
     });
   };
 
