@@ -1,8 +1,40 @@
 import styled from '@emotion/styled';
 import { FiArrowDown } from 'react-icons/fi';
 import { AiFillCloseCircle } from 'react-icons/ai';
+import { useState } from 'react';
+import emailjs from 'emailjs-com';
 
 const PopUpEmail = ({ onPopupClose }) => {
+  const [name, setName] = useState('name');
+  const [email, setEmail] = useState(null);
+  const [emailStatus, setEmailStatus] = useState(null);
+
+  const handleChange = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const sendFeedback = (templateId, variables) => {
+    emailjs
+      .send('gmail', templateId, variables, 'user_WeycbcJ0dxUPiHdonwe4f')
+      .then((res) => {
+        setEmailStatus('Email successfully sent!');
+      })
+      .catch((err) => {
+        setEmailStatus('Oh well, you failed. ' + err);
+      });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const templateId = 'template_lsam5pe6';
+
+    sendFeedback(templateId, {
+      link_download: 'www.example.com',
+      from_name: name,
+      to_email: email,
+    });
+  };
+
   return (
     <PopUpEmailStyled>
       <h2 className="visually-hidden">email newsletter</h2>
@@ -10,10 +42,19 @@ const PopUpEmail = ({ onPopupClose }) => {
         <div className="enterEmail">
           <b className="title">Almost there!</b>
           <p className="titleNeedEmail">We just need your email address.</p>
-          <form onSubmit={(e) => e.preventDefault()}>
+
+          <form onSubmit={(e) => handleSubmit(e)} className="test-mailing">
             <label htmlFor="email">Your Email</label>
-            <input type="email" id="email" required />
-            <button className="submit" type="submit">
+            <input
+              type="email"
+              id="email"
+              required
+              id="test-mailing"
+              name="test-mailing"
+              onChange={(e) => handleChange(e)}
+              placeholder="Post your email"
+            />
+            <button type="submit" value="Submit" className="btn btn--submit submit">
               Download Activity
               <span>
                 <FiArrowDown />
@@ -23,6 +64,7 @@ const PopUpEmail = ({ onPopupClose }) => {
               By providing my email address I agree that I have reviewed and agree to the Terms of Service and Privacy
               Policy.
             </p>
+            {emailStatus && <p className="result">{emailStatus}</p>}
           </form>
 
           <button className="close" onClick={() => onPopupClose()}>
@@ -139,10 +181,18 @@ const PopUpEmailStyled = styled.section`
             height: auto;
           }
         }
-        .privacy {
-          font-size: 16px;
-          line-height: 20px;
-        }
+      }
+      .privacy {
+        font-size: 16px;
+        line-height: 20px;
+        margin-bottom: 20px;
+      }
+
+      .result {
+        font-size: 20px;
+        line-height: 24px;
+        text-transform: uppercase;
+        text-decoration: underline;
       }
     }
   }
