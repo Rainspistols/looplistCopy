@@ -31,19 +31,11 @@ const HeaderStyled = styled.header`
     padding: 30px 0;
   }
 
-  nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-
-    h3 {
-      color: ${(props) => props.theme.colors.white};
-      font-weight: bold;
-      font-size: 21px;
-    }
+  h3 {
+    color: ${(props) => props.theme.colors.white};
+    font-weight: bold;
+    font-size: 31px;
   }
-
 `;
 
 export default Header;
