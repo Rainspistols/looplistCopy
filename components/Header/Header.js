@@ -2,10 +2,12 @@ import styled from '@emotion/styled';
 import Link from 'next/link';
 import Container from '../../layouts/Container/Container';
 import NavMenu from '../NavMenu/NavMenu';
+import CookieAgreement from '../../layouts/CookieAgreement/CookieAgreement';
 
 const Header = () => {
   return (
     <HeaderStyled>
+      <CookieAgreement />
       <div className="logo">
         <Container>
           <Link href="/">
