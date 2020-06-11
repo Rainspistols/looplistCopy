@@ -1,12 +1,21 @@
 import styled from '@emotion/styled';
 import { FiArrowDown } from 'react-icons/fi';
 import { AiFillCloseCircle } from 'react-icons/ai';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import emailjs from 'emailjs-com';
+import Cookies from 'universal-cookie';
 
 const PopUpEmail = ({ onPopupClose }) => {
   const [email, setEmail] = useState(null);
   const [emailStatus, setEmailStatus] = useState(null);
+
+  const inputEl = useRef(null);
+
+  const cookies = new Cookies();
+  useEffect(() => {
+    const cookieValue = cookies.get('userEmail') || '';
+    inputEl.current.value = cookieValue;
+  }, []);
 
   const handleChange = (e) => {
     setEmail(e.target.value);
@@ -25,6 +34,7 @@ const PopUpEmail = ({ onPopupClose }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    cookies.set('userEmail', email, { path: '/' });
     const templateId = 'template_lsam5pe6';
 
     sendFeedback(templateId, {
@@ -53,6 +63,7 @@ const PopUpEmail = ({ onPopupClose }) => {
               name="test-mailing"
               onChange={(e) => handleChange(e)}
               placeholder="Post your email"
+              ref={inputEl}
             />
             <button type="submit" value="Submit" className="btn btn--submit submit">
               Download Activity
