@@ -26,6 +26,17 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700&display=swap"
             rel="stylesheet"
           />
+
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-78147056-2');
+            `,
+            }}
+          />
         </Head>
         <body>
           <Main />
