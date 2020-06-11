@@ -1,6 +1,6 @@
 import Theme from '../theme/theme';
 import GlobalStyles from '../styles/GlobalStyles';
-import ReactGA from 'react-ga';
+// import ReactGA from 'react-ga';
 // import { useEffect } from 'react';
 
 // This default export is required in a new `pages/_app.js` file.
