@@ -1,5 +1,4 @@
 import Main from '../../layouts/Main/Main';
-import { createClient } from 'contentful';
 import { useState, useEffect } from 'react';
 import styled from '@emotion/styled';
 import Container from '../../layouts/Container/Container';
@@ -48,17 +47,11 @@ const AbcsItem = ({ spesificContentBySlug }) => {
   );
 };
 
-const client = createClient({
-  space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
-  accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
-});
-
 export const getStaticPaths = async () => {
-  const itemsList = await client.getEntries({
-    content_type: 'contentPage',
-  });
+  const contenfulService = new ContentfulService();
+  const itemsList = await contenfulService.getAllContentPage();
 
-  const paths = itemsList.items.map((item) => ({ params: { slug: `/abcs-of-code/${item.fields.slug}` } }));
+  const paths = itemsList.map((item) => ({ params: { slug: `/abcs-of-code/${item.slug}` } }));
 
   return {
     paths,

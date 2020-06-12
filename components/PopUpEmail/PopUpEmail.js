@@ -14,6 +14,11 @@ const PopUpEmail = ({ onPopupClose }) => {
   const cookies = new Cookies();
   useEffect(() => {
     const cookieValue = cookies.get('userEmail') || '';
+
+    if (cookieValue) {
+      setEmail(cookieValue);
+    }
+
     inputEl.current.value = cookieValue;
   }, []);
 
@@ -34,9 +39,12 @@ const PopUpEmail = ({ onPopupClose }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    cookies.set('userEmail', email, { path: '/' });
-    const templateId = 'template_lsam5pe6';
 
+    if (!cookies.get('userEmail')) {
+      cookies.set('userEmail', email, { path: '/' });
+    }
+
+    const templateId = 'template_lsam5pe6';
     sendFeedback(templateId, {
       link_download: 'www.example.com',
       to_email: email,
