@@ -17,22 +17,6 @@ import {
 import Link from 'next/link';
 
 const AbcsOfCoding = ({ data }) => {
-  //Mock Data
-  // const data = [
-  //   { src: arrayImg, alt: 'array' },
-  //   { src: bitImg, alt: 'bit' },
-  //   { src: cookieImg, alt: 'cookie' },
-  //   { src: debugImg, alt: 'debug' },
-  //   { src: enumImg, alt: 'enum' },
-  //   { src: functionImg, alt: 'function' },
-  //   { src: gigabyteImg, alt: 'gigabyte' },
-  //   { src: htmlImg, alt: 'html' },
-  //   { src: integerImg, alt: 'integer' },
-  //   { src: jsonImg, alt: 'json' },
-  //   { src: kilobyteImg, alt: 'kilobyte' },
-  //   { src: loopImg, alt: 'loop' },
-  // ];
-
   return (
     <AbcsOfCodingStyled>
       <Container>
@@ -43,7 +27,10 @@ const AbcsOfCoding = ({ data }) => {
             <li key={index}>
               <Link href="/abcs-of-code/[slug]" as={`/abcs-of-code/${slug}`}>
                 <a>
-                  <img src={img} alt={alt} />
+                  <picture>
+                    <source media="(min-width: 768px)" srcset={img + '?w=310'} />
+                    <img src={img + '?w=728'} alt={alt} />
+                  </picture>
                 </a>
               </Link>
             </li>
