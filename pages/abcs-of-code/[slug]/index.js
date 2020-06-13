@@ -1,10 +1,10 @@
-import Main from '../../layouts/Main/Main';
+import Main from '../../../layouts/Main/Main';
 import { useState, useEffect } from 'react';
 import styled from '@emotion/styled';
-import Container from '../../layouts/Container/Container';
-import ContentfulService from '../../services/contentful';
+import Container from '../../../layouts/Container/Container';
+import ContentfulService from '../../../services/contentful';
 import { useRouter } from 'next/router';
-import PopUpEmail from '../../components/PopUpEmail/PopUpEmail';
+import PopUpEmail from '../../../components/PopUpEmail/PopUpEmail';
 
 const AbcsItem = ({ spesificContentBySlug }) => {
   console.log('test2');
