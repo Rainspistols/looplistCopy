@@ -5,7 +5,6 @@ import Link from 'next/link';
 const NavMenu = () => {
   return (
     <NavMenuStyled>
-      {/* <button className="menuIcon"> */}
       <Link href="/">
         <a className="menuIcon">
           <IoIosMenu />
@@ -15,19 +14,16 @@ const NavMenu = () => {
       <Link href="/abcs-of-code">
         <a className="absCodeLink">ABCs of Code</a>
       </Link>
-
-      {/* </button> */}
     </NavMenuStyled>
   );
 };
 
 const NavMenuStyled = styled.section`
-padding: 20px 0;
+  padding: 20px 0;
   .menuIcon {
     height: 52px;
     min-width: 52px;
     ${(props) => props.theme.flexCenter}
-    
 
     svg {
       width: 24px;
