@@ -1,19 +1,5 @@
 import styled from '@emotion/styled';
 import Container from '../../layouts/Container/Container';
-import {
-  arrayImg,
-  bitImg,
-  cookieImg,
-  debugImg,
-  enumImg,
-  functionImg,
-  gigabyteImg,
-  integerImg,
-  htmlImg,
-  jsonImg,
-  kilobyteImg,
-  loopImg,
-} from './images/';
 import Link from 'next/link';
 
 const AbcsOfCoding = ({ data }) => {

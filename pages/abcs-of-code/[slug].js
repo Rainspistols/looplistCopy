@@ -30,7 +30,11 @@ const AbcsItem = ({ spesificContentBySlug }) => {
           {router.isFallback ? <div>Loading...</div> : null}
           {data && (
             <div className="wholeWrap">
-              <img src={data[0].img} alt={data[0].alt} />
+              <picture>
+                <source media="(min-width: 768px)" srcset={data[0].img + '?w=400'} />
+                <img src={data[0].img + '?w=726'} alt={data[0].alt} />
+              </picture>
+
               <div className="contentWrap">
                 <h1>{data[0].title}</h1>
                 <h2>{data[0].alt}</h2>
@@ -121,7 +125,7 @@ const AbcsItemStyled = styled.section`
   }
 
   ${(props) => props.theme.mediaTablet} {
-    img {
+    picture {
       width: 40%;
     }
 
