@@ -51,7 +51,7 @@ export const getStaticPaths = async () => {
   const contenfulService = new ContentfulService();
   const itemsList = await contenfulService.getAllContentPage();
 
-  const paths = itemsList.map((item) => ({ params: { slug: `/abcs-of-code/${item.slug}` } }));
+  const paths = itemsList.map((item) => ({ params: { slug: item.slug } }));
 
   return {
     paths,
