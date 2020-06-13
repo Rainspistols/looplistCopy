@@ -7,6 +7,7 @@ import { useRouter } from 'next/router';
 import PopUpEmail from '../../components/PopUpEmail/PopUpEmail';
 
 const AbcsItem = ({ spesificContentBySlug }) => {
+  console.log('test2');
   const [data, setData] = useState(null);
   const [isDownloadPopupActive, setDownloadPopupActive] = useState(false);
 
