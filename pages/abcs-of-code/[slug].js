@@ -25,7 +25,6 @@ const AbcsItem = ({ spesificContentBySlug }) => {
 
   return (
     <Main headTitle="item">
-    <h3>TESTSLUG</h3>
       <AbcsItemStyled>
         <Container>
           {router.isFallback ? <div>Loading...</div> : null}

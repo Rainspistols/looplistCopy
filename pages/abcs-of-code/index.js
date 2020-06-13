@@ -3,11 +3,8 @@ import AbcsOfCoding from '../../components/AbcsOfCoding/AbcsOfCoding';
 import ContentfulService from '../../services/contentful';
 
 const Alphabet = ({ allContentPageItems }) => {
-  console.log('test');
-
   return (
     <Main headTitle="abcs-of-code">
-      <h3>TEST list</h3>
       <AbcsOfCoding data={allContentPageItems} />
     </Main>
   );
