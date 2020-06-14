@@ -1,42 +1,47 @@
 import styled from '@emotion/styled';
-import Link from 'next/link';
 import Container from '../../layouts/Container/Container';
 import NavMenu from '../NavMenu/NavMenu';
 import CookieAgreement from '../../layouts/CookieAgreement/CookieAgreement';
+import Logo from '../UI/Logo';
+import InfoBar from '../UI/InfoBar';
 
 const Header = () => {
   return (
-    <HeaderStyled>
-      <CookieAgreement />
-      <div className="logo">
+    <>
+      <InfoBar />
+      <HeaderStyled>
+        <CookieAgreement />
+
         <Container>
-          <Link href="/">
-            <a>
-              <h3>Loop's List</h3>
-            </a>
-          </Link>
+          <div className="header__wrap">
+            <Logo color="#2793da" />
+
+            <NavMenu />
+          </div>
         </Container>
-      </div>
-      <Container>
-        <NavMenu />
-      </Container>
-    </HeaderStyled>
+      </HeaderStyled>
+    </>
   );
 };
 
 const HeaderStyled = styled.header`
   color: ${(props) => props.theme.colors.white};
+  background: ${(props) => props.theme.colors.white};
+  padding: 10px 0;
 
-  .logo {
-    ${(props) => props.theme.flexCenter}
-    background: ${(props) => props.theme.colors.black};
-    padding: 30px 0;
+  .header__wrap {
+    ${(props) => props.theme.flexBetween};
+    flex-wrap: wrap;
   }
 
-  h3 {
-    color: ${(props) => props.theme.colors.white};
-    font-weight: bold;
-    font-size: 31px;
+  ${(props) => props.theme.mediaTablet} {
+    margin-bottom: 100px;
+
+    .header__wrap {
+      justify-content: space-between;
+      align-items: center;
+      margin: 0;
+    }
   }
 `;
 

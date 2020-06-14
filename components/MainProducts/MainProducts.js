@@ -2,7 +2,6 @@ import styled from '@emotion/styled';
 import { img1, img2, img3 } from './images';
 import Container from '../../layouts/Container/Container';
 
-
 const MainProducts = () => {
   const data = [
     { img: img2, alt: 'while nap_time' },
@@ -23,8 +22,6 @@ const MainProducts = () => {
           </ul>
         </section>
       </Container>
-
- 
     </MainProductsStyled>
   );
 };
@@ -34,10 +31,6 @@ const MainProductsStyled = styled.section`
     margin: 50px 0;
 
     ul li {
-      :not(:last-child) {
-        margin-bottom: 50px;
-      }
-
       img {
         margin: 0 auto;
       }
@@ -50,11 +43,7 @@ const MainProductsStyled = styled.section`
         ${(props) => props.theme.flexBetween};
         flex-wrap: wrap;
         li {
-          width: 31%;
-          margin-bottom: 30px;
-          :not(:last-child) {
-            margin-bottom: 30px;
-          }
+          width: 33.3333333%;
         }
       }
     }

@@ -89,6 +89,24 @@ const CreatedByStyled = styled.section`
           margin-bottom: 0;
           margin-right: 100px;
         }
+
+        a {
+          transition: all 0.3s ease-out;
+
+          img {
+            transition: all 0.3s ease-out;
+          }
+
+          :hover,
+          :active {
+            color: ${(props) => props.theme.colors.blue};
+          }
+
+          :hover img,
+          :active img {
+            transform: scale(1.2) translateY(-20px);
+          }
+        }
       }
     }
   }

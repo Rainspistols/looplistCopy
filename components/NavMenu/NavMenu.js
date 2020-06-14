@@ -1,51 +1,69 @@
 import styled from '@emotion/styled';
-import { IoIosMenu } from 'react-icons/io';
 import Link from 'next/link';
 
 const NavMenu = () => {
-  return (
-    <NavMenuStyled>
-      <Link href="/">
-        <a className="menuIcon">
-          <IoIosMenu />
-        </a>
-      </Link>
+  const data = [
+    { href: '/abcs-of-code', title: 'ABCs of Code' },
+    { href: '/about', title: 'About' },
+  ];
 
-      <Link href="/abcs-of-code">
-        <a className="absCodeLink">ABCs of Code</a>
-      </Link>
+  return (
+    <NavMenuStyled className="NavMenu">
+      <ul>
+        {data.map(({ href, title }, index) => (
+          <li key={index}>
+            <Link href={href}>
+              <a>{title}</a>
+            </Link>
+          </li>
+        ))}
+      </ul>
     </NavMenuStyled>
   );
 };
 
 const NavMenuStyled = styled.section`
-  padding: 20px 0;
-  .menuIcon {
-    height: 52px;
-    min-width: 52px;
-    ${(props) => props.theme.flexCenter}
-
-    svg {
-      width: 24px;
-      height: auto;
-      color: white;
-    }
+  margin-bottom: 20px;
+  ul {
+    display: flex;
+    flex-wrap: wrap;
   }
 
-  .absCodeLink {
-    display: none;
+  li {
+    margin-right: 30px;
   }
 
-  @media (min-width: 400px) {
-    display: block;
-    .menuIcon {
-      display: none;
+  a {
+    white-space: nowrap;
+    color: ${(props) => props.theme.colors.black};
+    font-size: 20px;
+  }
+
+  ${(props) => props.theme.mediaTablet} {
+    margin: 0;
+
+    li {
+      transition: all 0.3s ease-out;
+
+      :last-of-type {
+        margin: 0;
+      }
+
+      :hover,
+      :focus {
+        transform: scale(1.1);
+      }
+
+      :hover a,
+      :focus a {
+        color: ${(props) => props.theme.colors.orange};
+      }
     }
 
-    .absCodeLink {
-      display: flex;
-      white-space: nowrap;
-      color: ${(props) => props.theme.colors.blue};
+    a {
+      font-size: 28px;
+      line-height: 34px;
+      transition: color 0.3s ease-out;
     }
   }
 `;

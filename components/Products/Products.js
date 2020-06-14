@@ -4,26 +4,26 @@ import Container from '../../layouts/Container/Container';
 import InstagramEmbed from 'react-instagram-embed';
 
 const Products = () => {
-  // const data = [
-  //   { img: img1, alt: 'def' },
-  //   { img: img2, alt: 'what does a byte do?' },
-  //   { img: img3, alt: 'brush_teeth' },
-  //   { img: img4, alt: 'bugs need hugs' },
-  //   { img: img5, alt: "what's a bit" },
-  //   { img: img6, alt: "'this's is' + 'a string'" },
-  //   { img: img7, alt: "what's a bug" },
-  //   { img: img8, alt: "c = 'cat'" },
-  //   { img: img9, alt: "['hooray', 'for', 'arrays!']" },
-  // ];
-
   const data = [
-    'https://www.instagram.com/p/CAu6ju2BrgA/',
-    'https://www.instagram.com/p/CAftLGthQD5/',
-    'https://www.instagram.com/p/CAX3DctB1QL/',
-    'https://www.instagram.com/p/CAF8Q-encd5/',
-    'https://www.instagram.com/p/B_7vN5xHZfX/',
-    'https://www.instagram.com/p/B_z8LM4HX_m/',
+    { img: img1, alt: 'def' },
+    { img: img2, alt: 'what does a byte do?' },
+    { img: img3, alt: 'brush_teeth' },
+    { img: img4, alt: 'bugs need hugs' },
+    { img: img5, alt: "what's a bit" },
+    { img: img6, alt: "'this's is' + 'a string'" },
+    { img: img7, alt: "what's a bug" },
+    { img: img8, alt: "c = 'cat'" },
+    { img: img9, alt: "['hooray', 'for', 'arrays!']" },
   ];
+
+  // const data = [
+  //   'https://www.instagram.com/p/CAu6ju2BrgA/',
+  //   'https://www.instagram.com/p/CAftLGthQD5/',
+  //   'https://www.instagram.com/p/CAX3DctB1QL/',
+  //   'https://www.instagram.com/p/CAF8Q-encd5/',
+  //   'https://www.instagram.com/p/B_7vN5xHZfX/',
+  //   'https://www.instagram.com/p/B_z8LM4HX_m/',
+  // ];
 
   return (
     <ProdutcsStyled>
@@ -36,15 +36,15 @@ const Products = () => {
           for coding basics and stories.
         </h2>
 
-        {/* <ul>
+        <ul>
           {data.map(({ img, alt }, index) => (
             <li key={index}>
               <img src={img} alt={alt} />
             </li>
           ))}
-        </ul> */}
+        </ul>
 
-        <ul>
+        {/* <ul>
           {data.map((item, index) => (
             <li key={index}>
               <InstagramEmbed
@@ -62,7 +62,7 @@ const Products = () => {
               />
             </li>
           ))}
-        </ul>
+        </ul> */}
       </Container>
     </ProdutcsStyled>
   );
@@ -87,7 +87,33 @@ const ProdutcsStyled = styled.section`
     }
   }
 
-  ul iframe {
+  ul {
+    li {
+      margin-bottom: 10px;
+    }
+
+    img {
+      margin: 0 auto;
+    }
+  }
+
+  ${(props) => props.theme.mediaTablet} {
+    h2 {
+      a {
+        transition: all 0.3s ease-out;
+
+        :hover,
+        :focus {
+          transform: scale(1.1);
+          color: ${(props) => props.theme.colors.orange};
+        }
+      }
+
+    
+    }
+  }
+
+  /* ul iframe {
     margin: 0 auto 20px !important;
     min-width: auto !important;
     max-width: 100% !important;
@@ -96,18 +122,23 @@ const ProdutcsStyled = styled.section`
     :not(:last-child) {
       margin-bottom: 20px;
     }
-  }
+  } */
 
   ${(props) => props.theme.mediaTablet} {
+    padding-bottom: 80px;
     ul {
       display: flex;
       align-items: center;
       flex-wrap: wrap;
       justify-content: space-around;
 
-      iframe {
+      li {
+        width: 32%;
+      }
+
+      /* iframe {
         width: 300px !important;
-        margin-bottom: 50px;
+        margin-bottom: 50px; */
 
         /* :not(:nth-of-type(3n)) {
           margin-right: 2%;
