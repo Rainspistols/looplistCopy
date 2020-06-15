@@ -30,9 +30,12 @@ const MainProductsStyled = styled.section`
   .products {
     margin: 50px 0;
 
-    ul li {
-      img {
-        margin: 0 auto;
+    ul {
+      display: flex;
+      li {
+        img {
+          margin: 0 auto;
+        }
       }
     }
   }
