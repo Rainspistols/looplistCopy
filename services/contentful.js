@@ -41,6 +41,9 @@ export default class ContentfulService {
       title: item.fields.title,
       img: item.fields.primaryImage.fields.file.url,
       p: item.fields.body.content[0].content[0].value,
+      downloadTitle: item.fields.product.fields.productTitle,
+      downloadDesctiption: item.fields.product.fields.productName.content[0].content[0].value,
+      downloadAssets: item.fields.product.fields.primaryImage.fields.file.url,
     }));
   };
 }

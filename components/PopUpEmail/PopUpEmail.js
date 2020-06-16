@@ -5,7 +5,7 @@ import { useState, useEffect, useRef } from 'react';
 import emailjs from 'emailjs-com';
 import Cookies from 'universal-cookie';
 
-const PopUpEmail = ({ onPopupClose }) => {
+const PopUpEmail = ({ onPopupClose, downloadLink, downloadBtnName }) => {
   const [email, setEmail] = useState(null);
   const [emailStatus, setEmailStatus] = useState(null);
 
@@ -40,13 +40,11 @@ const PopUpEmail = ({ onPopupClose }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!cookies.get('userEmail')) {
-      cookies.set('userEmail', email, { path: '/' });
-    }
+    cookies.set('userEmail', email, { path: '/' });
 
     const templateId = 'template_lsam5pe6';
     sendFeedback(templateId, {
-      link_download: 'www.example.com',
+      link_download: downloadLink,
       to_email: email,
       email: email,
       customer_name: email,
@@ -74,7 +72,7 @@ const PopUpEmail = ({ onPopupClose }) => {
               ref={inputEl}
             />
             <button type="submit" value="Submit" className="btn btn--submit submit">
-              Download Activity
+              {downloadBtnName}
               <span>
                 <FiArrowDown />
               </span>

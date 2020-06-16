@@ -71,11 +71,6 @@ const FooterStyled = styled.footer`
       font-size: 24px;
       line-height: 25px;
       transition: all 0.3s ease-out;
-
-      :hover,
-      :focus {
-        transform: scale(1.2);
-      }
     }
   }
 `;

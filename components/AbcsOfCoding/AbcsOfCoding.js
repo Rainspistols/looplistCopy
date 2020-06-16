@@ -14,7 +14,7 @@ const AbcsOfCoding = ({ data }) => {
               <Link href="/abcs-of-code/[slug]" as={`/abcs-of-code/${slug}`}>
                 <a>
                   <picture>
-                    <source media="(min-width: 768px)" srcset={img + '?w=310'} />
+                    <source media="(min-width: 768px)" srcSet={img + '?w=310'} />
                     <img src={img + '?w=728'} alt={alt} />
                   </picture>
                 </a>

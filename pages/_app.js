@@ -1,5 +1,8 @@
 import Theme from '../theme/theme';
 import GlobalStyles from '../styles/GlobalStyles';
+import { CacheProvider } from '@emotion/core';
+import { cache } from 'emotion';
+
 // import ReactGA from 'react-ga';
 // import { useEffect } from 'react';
 
@@ -12,15 +15,17 @@ function App({ Component, pageProps }) {
   //     'cookieDomain': 'auto',
   //     'debug': true
   //   });
-    
+
   //   ReactGA.pageview(window.location.pathname + window.location.search);
   // }, []);
 
   return (
     <>
       <Theme>
-        <GlobalStyles />
-        <Component {...pageProps} />
+        <CacheProvider value={cache}>
+          <GlobalStyles />
+          <Component {...pageProps} />
+        </CacheProvider>
       </Theme>
     </>
   );

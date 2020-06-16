@@ -31,22 +31,30 @@ const AbcsItem = ({ spesificContentBySlug }) => {
           {data && (
             <div className="wholeWrap">
               <picture>
-                <source media="(min-width: 768px)" srcset={data[0].img + '?w=400'} />
+                <source media="(min-width: 768px)" srcSet={data[0].img + '?w=400'} />
                 <img src={data[0].img + '?w=726'} alt={data[0].alt} />
               </picture>
 
               <div className="contentWrap">
                 <h1>{data[0].title}</h1>
                 <h2>{data[0].alt}</h2>
-                <p>{data[0].p}</p>
-                <button onClick={() => setDownloadPopupActive(true)}>Download assets</button>
+                <p>
+                  {data[0].p} <br /> {data[0].downloadDesctiption}
+                </p>
+                <button onClick={() => setDownloadPopupActive(true)}>{'Download ' + data[0].downloadTitle}</button>
               </div>
             </div>
           )}
         </Container>
       </AbcsItemStyled>
 
-      {isDownloadPopupActive ? <PopUpEmail onPopupClose={onPopupClose} /> : null}
+      {isDownloadPopupActive && data ? (
+        <PopUpEmail
+          onPopupClose={onPopupClose}
+          downloadLink={data[0].downloadAssets}
+          downloadBtnName={'Download ' + data[0].downloadTitle}
+        />
+      ) : null}
     </Main>
   );
 };
@@ -125,6 +133,7 @@ const AbcsItemStyled = styled.section`
   }
 
   ${(props) => props.theme.mediaTablet} {
+    margin-bottom: 100px;
     picture {
       width: 40%;
     }
