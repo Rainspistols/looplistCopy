@@ -30,7 +30,7 @@ const NavMenuStyled = styled.section`
   }
 
   li {
-    margin-right: 30px;
+    margin-right: 54px;
   }
 
   a {
