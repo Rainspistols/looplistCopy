@@ -35,7 +35,8 @@ const HeaderStyled = styled.header`
   }
 
   ${(props) => props.theme.mediaTablet} {
-    margin-bottom: 100px;
+    margin-bottom: 90px;
+    padding: 50px 0;
 
     .header__wrap {
       justify-content: space-between;

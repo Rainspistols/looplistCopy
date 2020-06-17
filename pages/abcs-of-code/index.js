@@ -4,7 +4,7 @@ import ContentfulService from '../../services/contentful';
 
 const Alphabet = ({ allContentPageItems }) => {
   return (
-    <Main headTitle="abcs-of-code">
+    <Main headTitle="Abcs-of-code">
       <AbcsOfCoding data={allContentPageItems} />
     </Main>
   );

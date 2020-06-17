@@ -94,13 +94,6 @@ const PopUpEmail = ({ onPopupClose, downloadLink, downloadBtnName }) => {
 };
 
 const PopUpEmailStyled = styled.section`
-  background-color: rgba(0, 0, 0, 0.5);
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-
   .enterEmail__wrap {
     position: fixed;
     top: 50%;
@@ -108,21 +101,21 @@ const PopUpEmailStyled = styled.section`
     transform: translateY(-50%) translateX(-50%);
     max-width: 560px;
     background: ${(props) => props.theme.colors.beigeLight};
-    padding: 30px;
+    padding: 20px;
+    width: 80%;
 
     .enterEmail {
       background: ${(props) => props.theme.colors.white};
-      padding: 30px;
+      padding: 20px;
       position: relative;
 
       .close {
         position: absolute;
-        right: 30px;
-        top: 30px;
-        cursor: pointer;
+        right: 20px;
+        top: 20px;
 
         svg {
-          width: 40px;
+          width: 30px;
           height: auto;
         }
       }
@@ -142,7 +135,6 @@ const PopUpEmailStyled = styled.section`
         font-weight: 600;
         padding-right: 50px;
       }
-
       label {
         text-transform: uppercase;
         font-size: 12px;
@@ -210,6 +202,33 @@ const PopUpEmailStyled = styled.section`
         line-height: 24px;
         text-transform: uppercase;
         text-decoration: underline;
+      }
+    }
+  }
+
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  ${(props) => props.theme.mediaTablet} {
+    .enterEmail__wrap {
+      padding: 30px;
+
+      .enterEmail {
+        padding: 30px;
+
+        .close {
+          right: 30px;
+          top: 30px;
+          cursor: pointer;
+
+          svg {
+            width: 40px;
+          }
+        }
       }
     }
   }

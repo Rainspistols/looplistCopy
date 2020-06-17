@@ -8,7 +8,7 @@ import WhatIsLoopList from '../components/WhatIsLoopList/WhatIsLoopList';
 
 const Home = () => {
   return (
-    <Main headTitle="loop's list">
+    <Main headTitle="Loop's list">
       <Hero />
       <MainProducts />
       <ColorfulSeparater color="#00c2f7" />

@@ -11,6 +11,10 @@ const ContainerStyled = styled.div`
   @media (max-width: 960px) {
     padding: 0 20px;
   }
+
+  ${(props) => props.theme.mediaTablet} {
+    padding: 0 60px;
+  }
 `;
 
 export default Container;

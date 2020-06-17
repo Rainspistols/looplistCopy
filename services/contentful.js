@@ -33,6 +33,8 @@ export default class ContentfulService {
       content_type: CONTENT_TYPE_CONTENTPAGE,
       'fields.slug[in]': slug,
     });
+    // FOR TESTS
+    // console.log(spesificItem.items.map((item) => item.fields.product));
     return this._transformSpecificContentPageItem(spesificItem);
   };
   _transformSpecificContentPageItem = (spesificItem) => {
@@ -41,9 +43,15 @@ export default class ContentfulService {
       title: item.fields.title,
       img: item.fields.primaryImage.fields.file.url,
       p: item.fields.body.content[0].content[0].value,
-      downloadTitle: item.fields.product.fields.productTitle,
-      downloadDesctiption: item.fields.product.fields.productName.content[0].content[0].value,
-      downloadAssets: item.fields.product.fields.primaryImage.fields.file.url,
+      downloadTitle: item.fields.product ? item.fields.product.fields.productTitle : null,
+      downloadDesctiption: item.fields.product
+        ? item.fields.product.fields.productName.content[0].content[0].value
+        : null,
+      downloadImg:
+        item.fields.product == undefined ||
+        item.fields.product.fields.primaryImage.fields == undefined
+          ? null
+          : item.fields.product.fields.primaryImage.fields.file.url,
     }));
   };
 }

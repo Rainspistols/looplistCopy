@@ -59,7 +59,7 @@ const FooterStyled = styled.footer`
   }
 
   ${(props) => props.theme.mediaTablet} {
-    padding: 30px 150px;
+    padding: 30px 0;
     margin: 0 auto;
 
     .copyright {

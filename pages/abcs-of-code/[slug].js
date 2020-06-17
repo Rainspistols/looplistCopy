@@ -5,8 +5,9 @@ import Container from '../../layouts/Container/Container';
 import ContentfulService from '../../services/contentful';
 import { useRouter } from 'next/router';
 import PopUpEmail from '../../components/PopUpEmail/PopUpEmail';
+import GumroadService from '../../services/gumroad';
 
-const AbcsItem = ({ spesificContentBySlug }) => {
+const AbcsItem = ({ spesificContentBySlug, allGumroadItems }) => {
   const [data, setData] = useState(null);
   const [isDownloadPopupActive, setDownloadPopupActive] = useState(false);
 
@@ -24,42 +25,68 @@ const AbcsItem = ({ spesificContentBySlug }) => {
   }
 
   return (
-    <Main headTitle="item">
-      <AbcsItemStyled>
-        <Container>
-          {router.isFallback ? <div>Loading...</div> : null}
-          {data && (
+    data &&
+    allGumroadItems && (
+      <Main headTitle={data[0].title}>
+        <AbcsItemStyled>
+          <Container>
+            {router.isFallback ? <div>Loading...</div> : null}
             <div className="wholeWrap">
               <picture>
                 <source media="(min-width: 768px)" srcSet={data[0].img + '?w=400'} />
                 <img src={data[0].img + '?w=726'} alt={data[0].alt} />
               </picture>
-
               <div className="contentWrap">
                 <h1 className="title">{data[0].title}</h1>
                 <h2 className="short-description">{data[0].alt}</h2>
                 <p className="long-description">{data[0].p}</p>
-                <p className="slogan-to-download">{data[0].downloadDesctiption}</p>
-                <button onClick={() => setDownloadPopupActive(true)}>Donwload Actvity!</button>
+              </div>
+
+              <div className="downloadWrap">
+                <div className="buttonSloganWrap">
+                  <p className="slogan-to-download">{data[0].downloadDesctiption}</p>
+
+                  {data[0].downloadImg === null ? (
+                    <a
+                      className="downloadButtonOrLink"
+                      href={allGumroadItems.products[0].short_url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Buy All activities for 1.99$
+                    </a>
+                  ) : (
+                    <button className="downloadButtonOrLink" onClick={() => setDownloadPopupActive(true)}>
+                      Download Actvity for free!
+                    </button>
+                  )}
+                </div>
 
                 <picture>
-                  <source media="(min-width: 768px)" srcSet={data[0].downloadAssets + '?w=400'} />
-                  <img className="imgPreview" src={data[0].downloadAssets + '?w=726'} alt={data[0].title} />
+                  <source
+                    media="(min-width: 768px)"
+                    srcSet={
+                      data[0].downloadImg === null
+                        ? allGumroadItems.products[0].preview_url
+                        : data[0].downloadImg + '?w=400'
+                    }
+                  />
+                  <img className="imgPreview" src={data[0].downloadImg + '?w=726'} alt={data[0].title} />
                 </picture>
               </div>
             </div>
-          )}
-        </Container>
-      </AbcsItemStyled>
+          </Container>
+        </AbcsItemStyled>
 
-      {isDownloadPopupActive && data ? (
-        <PopUpEmail
-          onPopupClose={onPopupClose}
-          downloadLink={data[0].downloadAssets}
-          downloadBtnName={'Download ' + data[0].downloadTitle}
-        />
-      ) : null}
-    </Main>
+        {isDownloadPopupActive && data ? (
+          <PopUpEmail
+            onPopupClose={onPopupClose}
+            downloadLink={data[0].downloadImg}
+            downloadBtnName={'Download ' + data[0].downloadTitle}
+          />
+        ) : null}
+      </Main>
+    )
   );
 };
 
@@ -79,9 +106,13 @@ export const getStaticProps = async (context) => {
   const contenfulService = new ContentfulService();
   const spesificContentBySlug = await contenfulService.getSpecificContentPageItemBySlug(context.params.slug);
 
+  const gumroadService = new GumroadService();
+  const allGumroadItems = await gumroadService.getGumroadAllProducts();
+
   return {
     props: {
       spesificContentBySlug,
+      allGumroadItems,
     },
   };
 };
@@ -135,7 +166,7 @@ const AbcsItemStyled = styled.section`
     width: 100%;
   }
 
-  button {
+  .downloadButtonOrLink {
     width: 100%;
     background: ${(props) => props.theme.colors.blue};
     border-radius: 5px;
@@ -147,6 +178,8 @@ const AbcsItemStyled = styled.section`
     font-size: 36px;
     line-height: 38px;
     padding: 20px 10px;
+    box-sizing: border-box;
+    text-align: center;
 
     :hover,
     :focus {
@@ -157,11 +190,57 @@ const AbcsItemStyled = styled.section`
   ${(props) => props.theme.mediaTablet} {
     margin-bottom: 100px;
     picture {
-      width: 40%;
+      width: 55%;
     }
 
     .contentWrap {
-      width: 50%;
+      width: 45%;
+    }
+    .wholeWrap {
+      align-items: flex-start;
+    }
+
+    .title {
+      margin-bottom: 35px;
+    }
+
+    .short-description,
+    .long-description,
+    .slogan-to-download {
+      font-size: 34px;
+      line-height: 36px;
+    }
+
+    .short-description {
+      margin-bottom: 56px;
+    }
+
+    .long-description {
+      margin-bottom: 240px;
+    }
+
+    .downloadWrap {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .slogan-to-download {
+      margin-bottom: 20px;
+    }
+
+    .downloadButtonOrLink {
+      max-width: 370px;
+    }
+
+    .buttonSloganWrap {
+      order: 2;
+      max-width: 45%;
+    }
+
+    .downloadWrap {
+      picture {
+        order: 1;
+      }
     }
   }
 `;
