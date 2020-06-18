@@ -1,13 +1,13 @@
 import styled from '@emotion/styled';
-import { TiArrowLoopOutline } from 'react-icons/ti';
 import Link from 'next/link';
+import logoImg from './logoImg.png';
 
 const Logo = ({ color }) => {
   return (
     <LogoStyled>
       <Link href="/">
         <a style={{ color: color }}>
-          <TiArrowLoopOutline />
+          <img src={logoImg} alt="Loop's list logo" />
         </a>
       </Link>
     </LogoStyled>
@@ -19,25 +19,17 @@ const LogoStyled = styled.div`
   margin-bottom: 10px;
   transition: all 0.3s ease-out;
 
-  :hover, :focus {
+  :hover,
+  :focus {
     transform: scale(1.1);
-    
   }
 
-  a svg {
-    width: 80px;
-    height: auto;
-  }
 
   ${(props) => props.theme.mediaTablet} {
     width: auto;
     margin: 0;
   }
 
-  a svg {
-    width: 140px;
-    height: auto;
-  }
 `;
 
 export default Logo;

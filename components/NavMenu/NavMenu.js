@@ -1,11 +1,13 @@
 import styled from '@emotion/styled';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 const NavMenu = () => {
   const data = [
     { href: '/abcs-of-code', title: 'ABCs of Code' },
     { href: '/about', title: 'About' },
   ];
+  const router = useRouter();
 
   return (
     <NavMenuStyled className="NavMenu">
@@ -13,7 +15,7 @@ const NavMenu = () => {
         {data.map(({ href, title }, index) => (
           <li key={index}>
             <Link href={href}>
-              <a>{title}</a>
+              <a className={router.pathname == href ? 'active' : ''}>{title}</a>
             </Link>
           </li>
         ))}
@@ -39,6 +41,10 @@ const NavMenuStyled = styled.section`
     font-size: 20px;
   }
 
+  a.active {
+    color: ${(props) => props.theme.colors.blue};
+  }
+
   ${(props) => props.theme.mediaTablet} {
     margin: 0;
 
@@ -52,7 +58,6 @@ const NavMenuStyled = styled.section`
       :hover,
       :focus {
         transform: scale(1.1);
-        
       }
 
       :hover a,
