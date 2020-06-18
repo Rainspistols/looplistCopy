@@ -1,22 +1,19 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document';
-import { extractCritical } from 'emotion-server'
+import { extractCritical } from 'emotion-server';
 
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
-    const initialProps = await Document.getInitialProps(ctx)
-    const styles = extractCritical(initialProps.html)
+    const initialProps = await Document.getInitialProps(ctx);
+    const styles = extractCritical(initialProps.html);
     return {
       ...initialProps,
       styles: (
         <>
           {initialProps.styles}
-          <style
-            data-emotion-css={styles.ids.join(' ')}
-            dangerouslySetInnerHTML={{ __html: styles.css }}
-          />
+          <style data-emotion-css={styles.ids.join(' ')} dangerouslySetInnerHTML={{ __html: styles.css }} />
         </>
       ),
-    }
+    };
   }
 
   render() {
@@ -54,6 +51,7 @@ class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
+          {/* <script type="text/javascript" src="https://gumroad.com/js/gumroad.js" /> */}
         </body>
       </Html>
     );

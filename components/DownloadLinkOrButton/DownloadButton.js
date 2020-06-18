@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 const DownloadButton = ({ onButtonClick }) => {
-  return <DownloadButtonStyled onClick={() => onButtonClick()}>Download Actvity for free!</DownloadButtonStyled>;
+  return <DownloadButtonStyled onClick={() => onButtonClick()}>Download Actvity for free</DownloadButtonStyled>;
 };
 
 const DownloadButtonStyled = styled.button`
@@ -26,6 +26,8 @@ const DownloadButtonStyled = styled.button`
 
   ${(props) => props.theme.mediaTablet} {
     max-width: 370px;
+    font-size: 36px;
+    line-height: 38px;
   }
 `;
 

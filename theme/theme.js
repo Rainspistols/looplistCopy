@@ -8,6 +8,7 @@ const theme = {
     pink2: '#ef3c8f',
     brown: '#757763',
     beigeLight: '#d0d1cd',
+    beigeLightTransparent: 'rgba(208, 209, 205, 0.7)',
     beigeLighter: '#eff0eb',
     blue: '#00c2f7',
     blue2: '#2793da',
@@ -19,14 +20,14 @@ const theme = {
 
   flexCenter: {
     display: 'flex',
-    'alignItems': 'center',
-    'justifyContent': 'center',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 
   flexBetween: {
     display: 'flex',
-    'alignItems': 'center',
-    'justifyContent': 'space-between',
+    alignItems: 'center',
+    justifyContent: 'space-between',
   },
 
   globalPadding: {

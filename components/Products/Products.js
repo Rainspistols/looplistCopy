@@ -105,6 +105,7 @@ const ProdutcsStyled = styled.section`
         :hover,
         :focus {
           transform: scale(1.1);
+          
           color: ${(props) => props.theme.colors.orange};
         }
       }

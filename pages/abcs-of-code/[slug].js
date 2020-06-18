@@ -6,12 +6,16 @@ import ContentfulService from '../../services/contentful';
 import { useRouter } from 'next/router';
 import PopUpEmail from '../../components/PopUpEmail/PopUpEmail';
 import GumroadService from '../../services/gumroad';
-import ButtonOrLink from '../../components/ButtonOrLink';
+import GumroadBuyPage from '../../components/GumroadBuyPage/GumroadBuyPage';
+import DonwloadOrBuyButton from '../../components/DownloadOrBuyButton/DownloadOrBuyButton';
+// import DownloadLinkOrButton from '../../components/DownloadLinkOrButton';
 
 const AbcsItem = ({ spesificContentBySlug, allGumroadItems }) => {
   const [contentfulData, setContentfulData] = useState(null);
   const [gumroadData, setGumroadData] = useState(null);
   const [isDownloadPopupActive, setDownloadPopupActive] = useState(false);
+  const [isGumroadBuyPageVisible, setGumroadBuyPageVisible] = useState(false);
+  console.log(allGumroadItems);
 
   const onPopupClose = () => {
     setDownloadPopupActive(false);
@@ -30,7 +34,7 @@ const AbcsItem = ({ spesificContentBySlug, allGumroadItems }) => {
   return (
     contentfulData &&
     gumroadData && (
-      <Main headTitle={contentfulData.title}>
+      <Main headTitle={"Loop's list | " + contentfulData.title}>
         <AbcsItemStyled>
           <Container>
             {router.isFallback ? <div>Loading...</div> : null}
@@ -49,11 +53,21 @@ const AbcsItem = ({ spesificContentBySlug, allGumroadItems }) => {
                 <div className="buttonSloganWrap">
                   <p className="slogan-to-download">{contentfulData.productDesctiption}</p>
 
-                  <ButtonOrLink
+                  <DonwloadOrBuyButton
+                    isDownload={contentfulData.productImgUrl === null ? false : true}
+                    onDownloadButton={() => setDownloadPopupActive(true)}
+                    onBuyButton={() => setGumroadBuyPageVisible(true)}
+                  />
+
+                  {/* 
+                  <DownloadLinkOrButton
                     isButton={contentfulData.productImgUrl === null ? false : true}
                     onButtonClick={() => setDownloadPopupActive(true)}
-                    href={contentfulData.productImgUrl === null ? gumroadData.short_url : null}
-                  />
+                  /> */}
+
+                  {isGumroadBuyPageVisible ? (
+                    <GumroadBuyPage src={gumroadData.short_url} onOverlay={() => setGumroadBuyPageVisible(false)} />
+                  ) : null}
                 </div>
 
                 <picture>
@@ -67,7 +81,11 @@ const AbcsItem = ({ spesificContentBySlug, allGumroadItems }) => {
                   />
                   <img
                     className="imgPreview"
-                    src={contentfulData.productImgUrl + '?w=726'}
+                    src={
+                      contentfulData.productImgUrl === null
+                        ? gumroadData.preview_url
+                        : contentfulData.productImgUrl + '?w=726'
+                    }
                     alt={contentfulData.title}
                   />
                 </picture>

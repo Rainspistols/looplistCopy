@@ -1,14 +1,14 @@
 import styled from '@emotion/styled';
 
-const DownloadLink = ({ href }) => {
+const DonwloadOrBuyButton = ({ isDownload, onBuyButton, onDownloadButton }) => {
   return (
-    <DownloadLinkStyled href={href} target="_blank" rel="noopener noreferrer">
-      Download all activities for 1.99$
-    </DownloadLinkStyled>
+    <DonwloadOrBuyButtonStyled onClick={() => (isDownload ? onDownloadButton() : onBuyButton())}>
+      {isDownload ? 'Download Actvity for free' : 'Buy all activities for 1.99$'}
+    </DonwloadOrBuyButtonStyled>
   );
 };
 
-const DownloadLinkStyled = styled.a`
+const DonwloadOrBuyButtonStyled = styled.button`
   width: 100%;
   background: ${(props) => props.theme.colors.blue};
   border-radius: 5px;
@@ -17,8 +17,8 @@ const DownloadLinkStyled = styled.a`
   transition: all 0.3s ease-in-out;
   cursor: pointer;
   margin: 0 0 46px;
-  font-size: 36px;
-  line-height: 38px;
+  font-size: 26px;
+  line-height: 28px;
   padding: 20px 10px;
   box-sizing: border-box;
   text-align: center;
@@ -30,7 +30,9 @@ const DownloadLinkStyled = styled.a`
 
   ${(props) => props.theme.mediaTablet} {
     max-width: 370px;
+    font-size: 26px;
+    line-height: 28px;
   }
 `;
 
-export default DownloadLink;
+export default DonwloadOrBuyButton;

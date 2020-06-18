@@ -52,6 +52,7 @@ const NavMenuStyled = styled.section`
       :hover,
       :focus {
         transform: scale(1.1);
+        
       }
 
       :hover a,

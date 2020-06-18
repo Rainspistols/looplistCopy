@@ -43,6 +43,7 @@ const FooterSocialsStyled = styled.div`
       :hover,
       :focus {
         transform:scale(1.2);
+        
       }
 
       :hover svg,

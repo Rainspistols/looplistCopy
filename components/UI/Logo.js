@@ -21,6 +21,7 @@ const LogoStyled = styled.div`
 
   :hover, :focus {
     transform: scale(1.1);
+    
   }
 
   a svg {
