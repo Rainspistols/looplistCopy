@@ -41,15 +41,14 @@ export default class ContentfulService {
     return spesificItem.items.map((item) => ({
       alt: item.fields.description,
       title: item.fields.title,
-      img: item.fields.primaryImage.fields.file.url,
-      p: item.fields.body.content[0].content[0].value,
-      downloadTitle: item.fields.product ? item.fields.product.fields.productTitle : null,
-      downloadDesctiption: item.fields.product
+      imgUrl: item.fields.primaryImage.fields.file.url,
+      description: item.fields.body.content[0].content[0].value,
+      productTitle: item.fields.product ? item.fields.product.fields.productTitle : null,
+      productDesctiption: item.fields.product
         ? item.fields.product.fields.productName.content[0].content[0].value
         : null,
-      downloadImg:
-        item.fields.product == undefined ||
-        item.fields.product.fields.primaryImage.fields == undefined
+      productImgUrl:
+        item.fields.product == undefined || item.fields.product.fields.primaryImage.fields == undefined
           ? null
           : item.fields.product.fields.primaryImage.fields.file.url,
     }));

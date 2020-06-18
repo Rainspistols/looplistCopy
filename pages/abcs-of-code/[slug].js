@@ -6,9 +6,11 @@ import ContentfulService from '../../services/contentful';
 import { useRouter } from 'next/router';
 import PopUpEmail from '../../components/PopUpEmail/PopUpEmail';
 import GumroadService from '../../services/gumroad';
+import ButtonOrLink from '../../components/ButtonOrLink';
 
 const AbcsItem = ({ spesificContentBySlug, allGumroadItems }) => {
-  const [data, setData] = useState(null);
+  const [contentfulData, setContentfulData] = useState(null);
+  const [gumroadData, setGumroadData] = useState(null);
   const [isDownloadPopupActive, setDownloadPopupActive] = useState(false);
 
   const onPopupClose = () => {
@@ -16,8 +18,9 @@ const AbcsItem = ({ spesificContentBySlug, allGumroadItems }) => {
   };
 
   useEffect(() => {
-    setData(spesificContentBySlug);
-  }, [spesificContentBySlug]);
+    setContentfulData(spesificContentBySlug[0]);
+    setGumroadData(allGumroadItems.products[0]);
+  }, [spesificContentBySlug, allGumroadItems]);
 
   const router = useRouter();
   if (router.isFallback) {
@@ -25,64 +28,59 @@ const AbcsItem = ({ spesificContentBySlug, allGumroadItems }) => {
   }
 
   return (
-    data &&
-    allGumroadItems && (
-      <Main headTitle={data[0].title}>
+    contentfulData &&
+    gumroadData && (
+      <Main headTitle={contentfulData.title}>
         <AbcsItemStyled>
           <Container>
             {router.isFallback ? <div>Loading...</div> : null}
             <div className="wholeWrap">
               <picture>
-                <source media="(min-width: 768px)" srcSet={data[0].img + '?w=400'} />
-                <img src={data[0].img + '?w=726'} alt={data[0].alt} />
+                <source media="(min-width: 768px)" srcSet={contentfulData.imgUrl + '?w=400'} />
+                <img src={contentfulData.imgUrl + '?w=726'} alt={contentfulData.alt} />
               </picture>
               <div className="contentWrap">
-                <h1 className="title">{data[0].title}</h1>
-                <h2 className="short-description">{data[0].alt}</h2>
-                <p className="long-description">{data[0].p}</p>
+                <h1 className="title">{contentfulData.title}</h1>
+                <h2 className="short-description">{contentfulData.alt}</h2>
+                <p className="long-description">{contentfulData.description}</p>
               </div>
 
               <div className="downloadWrap">
                 <div className="buttonSloganWrap">
-                  <p className="slogan-to-download">{data[0].downloadDesctiption}</p>
+                  <p className="slogan-to-download">{contentfulData.productDesctiption}</p>
 
-                  {data[0].downloadImg === null ? (
-                    <a
-                      className="downloadButtonOrLink"
-                      href={allGumroadItems.products[0].short_url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Buy All activities for 1.99$
-                    </a>
-                  ) : (
-                    <button className="downloadButtonOrLink" onClick={() => setDownloadPopupActive(true)}>
-                      Download Actvity for free!
-                    </button>
-                  )}
+                  <ButtonOrLink
+                    isButton={contentfulData.productImgUrl === null ? false : true}
+                    onButtonClick={() => setDownloadPopupActive(true)}
+                    href={contentfulData.productImgUrl === null ? gumroadData.short_url : null}
+                  />
                 </div>
 
                 <picture>
                   <source
                     media="(min-width: 768px)"
                     srcSet={
-                      data[0].downloadImg === null
-                        ? allGumroadItems.products[0].preview_url
-                        : data[0].downloadImg + '?w=400'
+                      contentfulData.productImgUrl === null
+                        ? gumroadData.preview_url
+                        : contentfulData.productImgUrl + '?w=400'
                     }
                   />
-                  <img className="imgPreview" src={data[0].downloadImg + '?w=726'} alt={data[0].title} />
+                  <img
+                    className="imgPreview"
+                    src={contentfulData.productImgUrl + '?w=726'}
+                    alt={contentfulData.title}
+                  />
                 </picture>
               </div>
             </div>
           </Container>
         </AbcsItemStyled>
 
-        {isDownloadPopupActive && data ? (
+        {isDownloadPopupActive && contentfulData ? (
           <PopUpEmail
             onPopupClose={onPopupClose}
-            downloadLink={data[0].downloadImg}
-            downloadBtnName={'Download ' + data[0].downloadTitle}
+            downloadLink={contentfulData.productImgUrl}
+            downloadBtnName={'Download ' + contentfulData.productTitle}
           />
         ) : null}
       </Main>
@@ -166,7 +164,7 @@ const AbcsItemStyled = styled.section`
     width: 100%;
   }
 
-  .downloadButtonOrLink {
+  /* .downloadButtonOrLink {
     width: 100%;
     background: ${(props) => props.theme.colors.blue};
     border-radius: 5px;
@@ -185,7 +183,7 @@ const AbcsItemStyled = styled.section`
     :focus {
       background: ${(props) => props.theme.colors.brown};
     }
-  }
+  } */
 
   ${(props) => props.theme.mediaTablet} {
     margin-bottom: 100px;
@@ -227,10 +225,10 @@ const AbcsItemStyled = styled.section`
     .slogan-to-download {
       margin-bottom: 20px;
     }
-
+/* 
     .downloadButtonOrLink {
       max-width: 370px;
-    }
+    } */
 
     .buttonSloganWrap {
       order: 2;
