@@ -14,7 +14,6 @@ const AbcsItem = ({ spesificContentBySlug, allGumroadItems }) => {
   const [gumroadData, setGumroadData] = useState(null);
   const [isDownloadPopupActive, setDownloadPopupActive] = useState(false);
   const [isGumroadBuyPageVisible, setGumroadBuyPageVisible] = useState(false);
-  console.log(allGumroadItems);
 
   const onPopupClose = () => {
     setDownloadPopupActive(false);
