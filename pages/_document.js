@@ -37,13 +37,21 @@ class MyDocument extends Document {
             rel="stylesheet"
           />
 
-          {/* <script
+          <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163332503-1"></script>
+          <script
             dangerouslySetInnerHTML={{
-              __html: `
-                <code snippet goes here>
+              __html: `<!-- Global site tag (gtag.js) - Google Analytics -->
+              <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163332503-1"></script>
+              <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+              
+                gtag('config', 'UA-78147056-2');
+              </script>
               `,
             }}
-          /> */}
+          />
         </Head>
         <body>
           <Main />

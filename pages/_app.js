@@ -3,8 +3,8 @@ import GlobalStyles from '../styles/GlobalStyles';
 import { CacheProvider } from '@emotion/core';
 import { cache } from 'emotion';
 
-import Router from 'next/router';
-import withGA from 'next-ga';
+// import Router from 'next/router';
+// import withGA from 'next-ga';
 
 // This default export is required in a new `pages/_app.js` file.
 
@@ -31,4 +31,6 @@ function App({ Component, pageProps }) {
   );
 }
 
-export default withGA('UA-78147056', Router)(App);
+export default App;
+
+// export default withGA('UA-78147056', Router)(App);
