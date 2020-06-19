@@ -31,4 +31,4 @@ function App({ Component, pageProps }) {
   );
 }
 
-export default withGA('UA-169216395-1', Router)(App);
+export default withGA('UA-78147056', Router)(App);
