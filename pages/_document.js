@@ -37,16 +37,15 @@ class MyDocument extends Document {
             rel="stylesheet"
           />
 
-          <script async src="https://www.googletagmanager.com/gtag/js?id=UA-78147056-2" />
+          {/* <script async src="https://www.googletagmanager.com/gtag/js?id=UA-78147056-2"></script>
           <script>
             window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments)}
             gtag('js', new Date()); gtag('config', 'UA-78147056-2');
-          </script>
+          </script> */}
         </Head>
         <body>
           <Main />
           <NextScript />
-          {/* <script type="text/javascript" src="https://gumroad.com/js/gumroad.js" /> */}
         </body>
       </Html>
     );

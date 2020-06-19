@@ -8,7 +8,6 @@ import PopUpEmail from '../../components/PopUpEmail/PopUpEmail';
 import GumroadService from '../../services/gumroad';
 import GumroadBuyPage from '../../components/GumroadBuyPage/GumroadBuyPage';
 import DonwloadOrBuyButton from '../../components/DownloadOrBuyButton/DownloadOrBuyButton';
-// import DownloadLinkOrButton from '../../components/DownloadLinkOrButton';
 
 const AbcsItem = ({ spesificContentBySlug, allGumroadItems }) => {
   const [contentfulData, setContentfulData] = useState(null);
@@ -58,12 +57,6 @@ const AbcsItem = ({ spesificContentBySlug, allGumroadItems }) => {
                     onDownloadButton={() => setDownloadPopupActive(true)}
                     onBuyButton={() => setGumroadBuyPageVisible(true)}
                   />
-
-                  {/* 
-                  <DownloadLinkOrButton
-                    isButton={contentfulData.productImgUrl === null ? false : true}
-                    onButtonClick={() => setDownloadPopupActive(true)}
-                  /> */}
 
                   {isGumroadBuyPageVisible ? (
                     <GumroadBuyPage src={gumroadData.short_url} onOverlay={() => setGumroadBuyPageVisible(false)} />
