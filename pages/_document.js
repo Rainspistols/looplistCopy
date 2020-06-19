@@ -37,11 +37,11 @@ class MyDocument extends Document {
             rel="stylesheet"
           />
 
-          <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163332503-1"></script>
+          {/* <script async src="https://www.googletagmanager.com/gtag/js?id=UA-78147056-2"></script>
           <script
             dangerouslySetInnerHTML={{
               __html: `<!-- Global site tag (gtag.js) - Google Analytics -->
-              <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163332503-1"></script>
+              <script async src="https://www.googletagmanager.com/gtag/js?id=UA-78147056-2"></script>
               <script>
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
@@ -51,7 +51,7 @@ class MyDocument extends Document {
               </script>
               `,
             }}
-          />
+          /> */}
         </Head>
         <body>
           <Main />
