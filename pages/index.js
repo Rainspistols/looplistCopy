@@ -7,6 +7,7 @@ import ColorfulSeparater from '../layouts/ColorfulSeparater/ColorfulSeparater';
 import WhatIsLoopList from '../components/WhatIsLoopList/WhatIsLoopList';
 
 const Home = () => {
+  console.log('gatest')
   return (
     <Main headTitle="Loop's list">
       <Hero />
