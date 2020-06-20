@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import Container from '../../layouts/Container/Container';
+import Container from '../../layouts/Container';
 
 const Hero = () => {
   return (

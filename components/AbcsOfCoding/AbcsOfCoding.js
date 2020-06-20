@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
-import Container from '../../layouts/Container/Container';
 import Link from 'next/link';
+import Container from '../../layouts/Container';
 
 const AbcsOfCoding = ({ data }) => {
   return (

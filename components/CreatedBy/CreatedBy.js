@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
-import Container from '../../layouts/Container/Container';
 import { bugImg, catImg } from './images/';
+import Container from '../../layouts/Container';
 
 const CreatedBy = () => {
   const data = [

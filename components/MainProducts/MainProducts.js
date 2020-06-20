@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { img1, img2, img3 } from './images';
-import Container from '../../layouts/Container/Container';
+import Container from '../../layouts/Container';
 
 const MainProducts = () => {
   const data = [

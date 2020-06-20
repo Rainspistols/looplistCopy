@@ -1,13 +1,12 @@
-import Main from '../layouts/Main/Main';
 import Hero from '../components/Hero/Hero';
 import MainProducts from '../components/MainProducts/MainProducts';
 import Products from '../components/Products/Products';
 import CreatedBy from '../components/CreatedBy/CreatedBy';
-import ColorfulSeparater from '../layouts/ColorfulSeparater/ColorfulSeparater';
 import WhatIsLoopList from '../components/WhatIsLoopList/WhatIsLoopList';
+import ColorfulSeparater from '../UI/ColorfulSeparater';
+import Main from '../layouts/Main';
 
 const Home = () => {
-  console.log('gatest')
   return (
     <Main headTitle="Loop's list">
       <Hero />

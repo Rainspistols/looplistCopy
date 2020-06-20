@@ -1,6 +1,6 @@
-import Main from '../../layouts/Main/Main';
 import AbcsOfCoding from '../../components/AbcsOfCoding/AbcsOfCoding';
 import ContentfulService from '../../services/contentful';
+import Main from '../../layouts/Main';
 
 const Alphabet = ({ allContentPageItems }) => {
   return (

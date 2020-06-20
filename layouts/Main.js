@@ -1,6 +1,6 @@
 import Head from 'next/head';
-import Header from '../../components/Header/Header';
-import Footer from '../../components/Footer/Footer';
+import Footer from '../components/Footer/Footer';
+import Header from '../components/Header/Header';
 
 const Main = ({ headTitle, children }) => {
   return (
@@ -8,7 +8,7 @@ const Main = ({ headTitle, children }) => {
       <Head>
         <title>{headTitle}</title>
       </Head>
-      
+
       <Header />
       <main>{children}</main>
       <Footer />

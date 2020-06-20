@@ -2,7 +2,6 @@ import styled from '@emotion/styled';
 import useOutsideAlerter from '../../hooks/useOutsideAlerter';
 import { useRef } from 'react';
 import { useState } from 'react';
-import { useEffect } from 'react';
 
 const GumroadBuyPage = ({ src, onOverlay }) => {
   const wrapperRef = useRef(null);

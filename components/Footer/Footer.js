@@ -1,9 +1,9 @@
 import styled from '@emotion/styled';
 import { IoMdMail } from 'react-icons/io';
-import Container from '../../layouts/Container/Container';
 import Newsletter from '../Newsletter/Newsletter';
 import FooterSocials from './FooterSocials';
 import FooterNav from './FooterNav';
+import Container from '../../layouts/Container';
 
 const Footer = () => {
   return (

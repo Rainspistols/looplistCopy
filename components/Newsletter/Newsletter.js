@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import Container from '../../layouts/Container/Container';
 
 const Newsletter = () => {
   return (

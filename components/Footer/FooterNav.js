@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
-import Logo from '../UI/Logo';
 import NavMenu from '../NavMenu/NavMenu';
+import Logo from '../../UI/Logo';
 
 const FooterNav = () => {
   return (

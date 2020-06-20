@@ -1,13 +1,18 @@
 import styled from '@emotion/styled';
 import Link from 'next/link';
-import logoImg from './logoImg.png';
+import logoWhite from './logo--white.svg';
+import logoBlack from './logo--black.svg';
 
 const Logo = ({ color }) => {
   return (
     <LogoStyled>
       <Link href="/">
-        <a style={{ color: color }}>
-          <img src={logoImg} alt="Loop's list logo" />
+        <a>
+          {color === 'black' ? (
+            <img src={logoBlack} alt="Loop's list logo" />
+          ) : (
+            <img src={logoWhite} alt="Loop's list logo" />
+          )}
         </a>
       </Link>
     </LogoStyled>
@@ -24,12 +29,15 @@ const LogoStyled = styled.div`
     transform: scale(1.1);
   }
 
+  img {
+    width: 189px;
+    height: auto;
+  }
 
   ${(props) => props.theme.mediaTablet} {
     width: auto;
     margin: 0;
   }
-
 `;
 
 export default Logo;

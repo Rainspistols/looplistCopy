@@ -1,9 +1,9 @@
 import styled from '@emotion/styled';
-import Container from '../../layouts/Container/Container';
 import NavMenu from '../NavMenu/NavMenu';
-import CookieAgreement from '../../layouts/CookieAgreement/CookieAgreement';
-import Logo from '../UI/Logo';
-import InfoBar from '../UI/InfoBar';
+import Logo from '../../UI/Logo';
+import CookieAgreement from '../../UI/CookieAgreement';
+import Container from '../../layouts/Container';
+import InfoBar from '../../UI/InfoBar';
 
 const Header = () => {
   return (
@@ -14,7 +14,7 @@ const Header = () => {
 
         <Container>
           <div className="header__wrap">
-            <Logo color="#2793da" />
+            <Logo color="black" />
 
             <NavMenu />
           </div>

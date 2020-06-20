@@ -1,7 +1,6 @@
 import styled from '@emotion/styled';
 import { img1, img2, img3, img4, img5, img6, img7, img8, img9 } from './images/';
-import Container from '../../layouts/Container/Container';
-import InstagramEmbed from 'react-instagram-embed';
+import Container from '../../layouts/Container';
 
 const Products = () => {
   const data = [
@@ -15,15 +14,6 @@ const Products = () => {
     { img: img8, alt: "c = 'cat'" },
     { img: img9, alt: "['hooray', 'for', 'arrays!']" },
   ];
-
-  // const data = [
-  //   'https://www.instagram.com/p/CAu6ju2BrgA/',
-  //   'https://www.instagram.com/p/CAftLGthQD5/',
-  //   'https://www.instagram.com/p/CAX3DctB1QL/',
-  //   'https://www.instagram.com/p/CAF8Q-encd5/',
-  //   'https://www.instagram.com/p/B_7vN5xHZfX/',
-  //   'https://www.instagram.com/p/B_z8LM4HX_m/',
-  // ];
 
   return (
     <ProdutcsStyled>
@@ -43,26 +33,6 @@ const Products = () => {
             </li>
           ))}
         </ul>
-
-        {/* <ul>
-          {data.map((item, index) => (
-            <li key={index}>
-              <InstagramEmbed
-                url={item}
-                maxWidth={320}
-                hideCaption={true}
-                containerTagName="div"
-                protocol=""
-                injectScript
-                onLoading={() => {}}
-                onSuccess={() => {}}
-                onAfterRender={() => {}}
-                onFailure={() => {}}
-                crossOrigin="anonymous"
-              />
-            </li>
-          ))}
-        </ul> */}
       </Container>
     </ProdutcsStyled>
   );

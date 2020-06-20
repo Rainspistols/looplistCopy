@@ -21,7 +21,7 @@ class MyDocument extends Document {
       <Html>
         <Head>
           <meta charSet="utf-8" />
-          <link rel="shortcut icon" href="/favicon.ico" />
+          <link rel="shortcut icon" href="/static/favicon.ico" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta name="theme-color" content="#000000" />
 
@@ -36,22 +36,6 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700&display=swap"
             rel="stylesheet"
           />
-
-          {/* <script async src="https://www.googletagmanager.com/gtag/js?id=UA-78147056-2"></script>
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `<!-- Global site tag (gtag.js) - Google Analytics -->
-              <script async src="https://www.googletagmanager.com/gtag/js?id=UA-78147056-2"></script>
-              <script>
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-              
-                gtag('config', 'UA-78147056-2');
-              </script>
-              `,
-            }}
-          /> */}
         </Head>
         <body>
           <Main />
