@@ -9,7 +9,6 @@ const Newsletter = () => {
         id="mc-embedded-subscribe-form"
         name="mc-embedded-subscribe-form"
         className="validate"
-        target="_blank"
       >
         <h2 className="subtitle">Get Loop`s List Updates!</h2>
 
@@ -102,7 +101,7 @@ const NewsletterStyled = styled.section`
 
   #mce-success-response {
     padding-top: 20px;
-    color: ${(props) => props.theme.colors.brown};
+    color: ${(props) => props.theme.colors.white};
     font-weight: 300;
     font-size: 16px;
     line-height: 24px;
