@@ -84,17 +84,6 @@ const ProdutcsStyled = styled.section`
     }
   }
 
-  /* ul iframe {
-    margin: 0 auto 20px !important;
-    min-width: auto !important;
-    max-width: 100% !important;
-    width: 100% !important;
-
-    :not(:last-child) {
-      margin-bottom: 20px;
-    }
-  } */
-
   ${(props) => props.theme.mediaTablet} {
     padding-bottom: 80px;
     ul {
@@ -107,16 +96,6 @@ const ProdutcsStyled = styled.section`
         width: 32%;
       }
 
-      /* iframe {
-        width: 300px !important;
-        margin-bottom: 50px; */
-
-        /* :not(:nth-of-type(3n)) {
-          margin-right: 2%;
-        }
-        :not(:last-child) {
-          margin-bottom: 50px;
-        } */
       }
     }
   }

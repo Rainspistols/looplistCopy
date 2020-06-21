@@ -4,7 +4,7 @@ import ContentfulService from '../../services/contentful';
 import { useRouter } from 'next/router';
 import PopUpEmail from '../../components/PopUpEmail/PopUpEmail';
 import GumroadService from '../../services/gumroad';
-import GumroadBuyPage from '../../components/GumroadBuyPage/GumroadBuyPage';
+import GumroadBuyPage from '../../components/Gumroad/GumroadBuyPage';
 import DonwloadOrBuyButton from '../../components/DownloadOrBuyButton/DownloadOrBuyButton';
 import Main from '../../layouts/Main';
 import Container from '../../layouts/Container';

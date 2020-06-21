@@ -1,15 +1,15 @@
 import styled from '@emotion/styled';
 
-const DonwloadOrBuyButton = ({ isDownload, onBuyButton, onDownloadButton }) => {
+const DonwloadOrBuyButton = ({ isDownload, onBuyButton, onDownloadButton, width = '100%' }) => {
   return (
-    <DonwloadOrBuyButtonStyled onClick={() => (isDownload ? onDownloadButton() : onBuyButton())}>
+    <DonwloadOrBuyButtonStyled width={width} onClick={() => (isDownload ? onDownloadButton() : onBuyButton())}>
       {isDownload ? 'Download Actvity for free' : 'Buy all activities for 1.99$'}
     </DonwloadOrBuyButtonStyled>
   );
 };
 
 const DonwloadOrBuyButtonStyled = styled.button`
-  width: 100%;
+  width: ${(props) => props.width};
   background: ${(props) => props.theme.colors.blue};
   border-radius: 5px;
   display: block;

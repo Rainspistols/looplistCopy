@@ -1,11 +1,15 @@
 import styled from '@emotion/styled';
 import Link from 'next/link';
 import Container from '../../layouts/Container';
+import GumroadBuyPage from '../Gumroad/GumroadBuyPage';
+import GumroadQuickBuyRow from '../Gumroad/GumroadQuickBuyRow';
 
-const AbcsOfCoding = ({ data }) => {
+const AbcsOfCoding = ({ data, gumroadAllProducts }) => {
   return (
     <AbcsOfCodingStyled>
       <Container>
+        <GumroadQuickBuyRow gumroadAllProducts={gumroadAllProducts} />
+
         <h2>ABCs of Coding</h2>
         <p className="slogan">A coding and technology concept for each letter of the alphabet!</p>
         <ul>
