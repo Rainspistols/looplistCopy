@@ -5,10 +5,15 @@ import CreatedBy from '../components/CreatedBy/CreatedBy';
 import WhatIsLoopList from '../components/WhatIsLoopList/WhatIsLoopList';
 import ColorfulSeparater from '../UI/ColorfulSeparater';
 import Main from '../layouts/Main';
+import InstagramEmbedCard from '../components/InstagramEmbedCard/InstagramEmbedCard';
 
 const Home = () => {
   return (
     <Main headTitle="Loop's list">
+      {/* <InstagramEmbedCard />
+      <InstagramEmbedCard />
+      <InstagramEmbedCard /> */}
+
       <Hero />
       <MainProducts />
       <ColorfulSeparater color="#00c2f7" />
