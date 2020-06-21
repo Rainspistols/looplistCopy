@@ -28,7 +28,7 @@ const PopUpEmail = ({ onPopupClose, downloadLink, downloadBtnName }) => {
 
   const sendFeedback = (templateId, variables) => {
     emailjs
-      .send('gmail', templateId, variables, 'user_WeycbcJ0dxUPiHdonwe4f')
+      .send('gmail', templateId, variables, 'user_0GXox4l9a0pd1LAVha4hG')
       .then((res) => {
         setEmailStatus('Email successfully sent!');
       })
@@ -42,7 +42,7 @@ const PopUpEmail = ({ onPopupClose, downloadLink, downloadBtnName }) => {
 
     cookies.set('userEmail', email, { path: '/' });
 
-    const templateId = 'template_lsam5pe6';
+    const templateId = 'template_Oi4vsgY2';
     sendFeedback(templateId, {
       link_download: downloadLink,
       to_email: email,
